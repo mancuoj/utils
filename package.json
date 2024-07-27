@@ -1,0 +1,60 @@
+{
+  "name": "package-placeholder",
+  "type": "module",
+  "version": "0.0.0",
+  "packageManager": "pnpm@9.6.0",
+  "description": "package-description",
+  "author": "Mancuoj <mancuoj@gmail.com>",
+  "license": "MIT",
+  "repository": "mancuoj/package-placeholder",
+  "keywords": [],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*",
+        "./dist/index.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "bunchee",
+    "dev": "bunchee -w",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest",
+    "prepublishOnly": "pnpm build",
+    "release": "bumpp && pnpm publish",
+    "prepare": "simple-git-hooks"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^2.23.2",
+    "@types/node": "^20.14.12",
+    "@vitest/coverage-v8": "^2.0.4",
+    "bumpp": "^9.4.1",
+    "bunchee": "^5.2.2",
+    "eslint": "^9.7.0",
+    "lint-staged": "^15.2.7",
+    "simple-git-hooks": "^2.11.1",
+    "typescript": "^5.5.4",
+    "vitest": "^2.0.4"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged"
+  },
+  "lint-staged": {
+    "*": "eslint --fix"
+  }
+}
