@@ -1,22 +1,42 @@
 {
-  "name": "package-placeholder",
+  "name": "@mancuoj/utils",
   "type": "module",
   "version": "0.0.0",
   "packageManager": "pnpm@9.6.0",
-  "description": "package-description",
+  "description": "Opinionated collection of common JavaScript / TypeScript utils",
   "author": "Mancuoj <mancuoj@gmail.com>",
   "license": "MIT",
-  "repository": "mancuoj/package-placeholder",
-  "keywords": [],
+  "repository": "mancuoj/utils",
+  "keywords": [
+    "mancuoj",
+    "utils",
+    "typescript"
+  ],
   "sideEffects": false,
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.cjs"
-    }
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./clsx": {
+      "import": {
+        "types": "./dist/clsx/index.d.mts",
+        "default": "./dist/clsx/index.mjs"
+      },
+      "require": {
+        "types": "./dist/clsx/index.d.cts",
+        "default": "./dist/clsx/index.cjs"
+      }
+    },
+    "./package.json": "./package.json"
   },
-  "main": "./dist/index.js",
+  "main": "./dist/index.cjs",
   "types": "./dist/index.d.ts",
   "typesVersions": {
     "*": {
@@ -33,19 +53,18 @@
     "build": "bunchee",
     "dev": "bunchee -w",
     "lint": "eslint .",
-    "typecheck": "tsc --noEmit",
-    "test": "vitest",
+    "test": "vitest run --coverage --typecheck",
     "prepublishOnly": "pnpm build",
-    "release": "bumpp && pnpm publish",
+    "release": "bumpp",
     "prepare": "simple-git-hooks"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.23.2",
     "@types/node": "^20.14.12",
-    "@vitest/coverage-v8": "^2.0.4",
+    "@vitest/coverage-istanbul": "^2.0.4",
     "bumpp": "^9.4.1",
     "bunchee": "^5.2.2",
-    "eslint": "^9.7.0",
+    "eslint": "^9.8.0",
     "lint-staged": "^15.2.7",
     "simple-git-hooks": "^2.11.1",
     "typescript": "^5.5.4",
