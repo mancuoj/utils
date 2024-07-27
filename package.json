@@ -65,7 +65,7 @@
     "lint": "eslint .",
     "test": "vitest run --coverage --typecheck",
     "prepublishOnly": "pnpm build",
-    "release": "bumpp",
+    "release": "bumpp && pnpm publish --access public",
     "prepare": "simple-git-hooks"
   },
   "devDependencies": {
