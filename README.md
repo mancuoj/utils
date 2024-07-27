@@ -24,5 +24,5 @@ Opinionated collection of common JavaScript / TypeScript utils.
 [bundle-href]: https://bundlephobia.com/result?p=@mancuoj/utils
 [jsdocs-src]: https://img.shields.io/badge/jsdocs-reference-18181b?style=flat&colorA=18181b&colorB=1f6feb
 [jsdocs-href]: https://www.jsdocs.io/package/@mancuoj/utils
-[license-src]: https://img.shields.io/github/license/mancuoj/@mancuoj/utils.svg?style=flat&colorA=18181b&colorB=1f6feb
-[license-href]: https://github.com/mancuoj/@mancuoj/utils/blob/main/LICENSE
+[license-src]: https://img.shields.io/github/license/mancuoj/utils.svg?style=flat&colorA=18181b&colorB=1f6feb
+[license-href]: https://github.com/mancuoj/utils/blob/main/LICENSE
