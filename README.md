@@ -9,6 +9,18 @@
 
 Opinionated collection of common JavaScript / TypeScript utils.
 
+## Examples
+
+```ts
+import { clsx, getWords } from '@mancuoj/utils'
+
+clsx('hello', { world: 1, push: true, force: null })
+// 'hello world push'
+
+getWords('camelCase_snake_case-kebabCase')
+// [ "camel", "Case", "snake", "case", "kebab", "Case" ]
+```
+
 ## License
 
 [MIT](https://github.com/mancuoj/@mancuoj/utils/blob/main/LICENSE) License © 2024-PRESENT [Mancuoj](https://github.com/mancuoj)
