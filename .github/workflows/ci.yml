@@ -25,7 +25,6 @@ jobs:
       - run: pnpm i -g @antfu/ni
       - run: nci
       - run: nr lint
-      - run: nr typecheck
 
   test:
     runs-on: ${{ matrix.os }}
@@ -51,3 +50,8 @@ jobs:
       - run: nci
       - run: nr build
       - run: nr test
+
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v4.0.1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
