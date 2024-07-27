@@ -8,7 +8,7 @@ describe('toPath', () => {
   })
 
   it('should handle URL paths', () => {
-    const url = new URL('file:///home/user/docs')
+    const url = new URL(process.platform === 'win32' ? 'file:///C:/Users/mancuoj' : 'file:///home/user/docs')
     const expectedPath = fileURLToPath(url)
     expect(toPath(url)).toBe(expectedPath)
   })
