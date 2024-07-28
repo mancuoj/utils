@@ -15,7 +15,11 @@ describe('isPathCwd', () => {
     expect(isPathCwd('..')).toBeFalsy()
     expect(isPathCwd('/')).toBeFalsy()
     expect(isPathCwd('foo')).toBeFalsy()
-    expect(isPathCwd(process.cwd().toUpperCase())).toBeFalsy()
+
+    if (process.platform === 'win32')
+      expect(isPathCwd(process.cwd().toUpperCase())).toBeTruthy()
+    else
+      expect(isPathCwd(process.cwd().toUpperCase())).toBeFalsy()
   })
 
   it('win32', () => {
