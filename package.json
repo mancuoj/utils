@@ -75,6 +75,16 @@
         "default": "./dist/object/index.cjs"
       }
     },
+    "./predicate": {
+      "import": {
+        "types": "./dist/predicate/index.d.mts",
+        "default": "./dist/predicate/index.mjs"
+      },
+      "require": {
+        "types": "./dist/predicate/index.d.cts",
+        "default": "./dist/predicate/index.cjs"
+      }
+    },
     "./string": {
       "import": {
         "types": "./dist/string/index.d.mts",
