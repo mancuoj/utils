@@ -35,6 +35,16 @@
         "default": "./dist/index.cjs"
       }
     },
+    "./ds": {
+      "import": {
+        "types": "./dist/ds/index.d.mts",
+        "default": "./dist/ds/index.mjs"
+      },
+      "require": {
+        "types": "./dist/ds/index.d.cts",
+        "default": "./dist/ds/index.cjs"
+      }
+    },
     "./file": {
       "import": {
         "types": "./dist/file/index.d.mts",
