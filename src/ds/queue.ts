@@ -1,15 +1,15 @@
-class Node<ValueType> {
-  value: ValueType
-  next?: Node<ValueType>
+class Node<T> {
+  value: T
+  next?: Node<T>
 
-  constructor(value: ValueType) {
+  constructor(value: T) {
     this.value = value
   }
 }
 
-export class Queue<ValueType> implements Iterable<ValueType> {
-  private _head?: Node<ValueType>
-  private _tail?: Node<ValueType>
+export class Queue<T> implements Iterable<T> {
+  private _head?: Node<T>
+  private _tail?: Node<T>
   private _length: number
 
   /**
@@ -46,9 +46,9 @@ export class Queue<ValueType> implements Iterable<ValueType> {
   /**
    * Adds a value to the queue.
    *
-   * @param {ValueType} value - The value to add.
+   * @param {T} value - The value to add.
    */
-  enqueue(value: ValueType): void {
+  enqueue(value: T): void {
     const node = new Node(value)
 
     if (this._tail) {
@@ -66,9 +66,9 @@ export class Queue<ValueType> implements Iterable<ValueType> {
   /**
    * Remove the next value in the queue.
    *
-   * @returns {ValueType | undefined} The removed value or `undefined` if the queue is empty.
+   * @returns {T | undefined} The removed value or `undefined` if the queue is empty.
    */
-  dequeue(): ValueType | undefined {
+  dequeue(): T | undefined {
     if (!this._head) {
       return undefined
     }
@@ -87,9 +87,9 @@ export class Queue<ValueType> implements Iterable<ValueType> {
   /**
    * Get the next value in the queue without removing it.
    *
-   * @returns {ValueType | undefined} The value or `undefined` if the queue is empty.
+   * @returns {T | undefined} The value or `undefined` if the queue is empty.
    */
-  peek(): ValueType | undefined {
+  peek(): T | undefined {
     return this._head?.value
   }
 
@@ -121,9 +121,9 @@ export class Queue<ValueType> implements Iterable<ValueType> {
    *
    * Allows you to use a for...of loop to iterate over the queue.
    *
-   * @returns {IterableIterator<ValueType>} An iterator for the queue.
+   * @returns {IterableIterator<T>} An iterator for the queue.
    */
-  *[Symbol.iterator](): IterableIterator<ValueType> {
+  *[Symbol.iterator](): IterableIterator<T> {
     let current = this._head
 
     while (current) {
