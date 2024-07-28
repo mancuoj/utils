@@ -47,7 +47,7 @@ function toVal(input: ClassValue): string | number {
  *
  * @example
  * const className = clsx('btn', ['btn-primary', { disabled: isDisabled }]);
- * // "btn btn-primary disabled" if isDisabled is true
+ * // className will be 'btn btn-primary disabled' if isDisabled is true
  */
 export function clsx(...args: ClassValue[]): string {
   return args.map(toVal).filter(Boolean).join(' ')
