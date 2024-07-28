@@ -24,16 +24,6 @@
         "default": "./dist/index.cjs"
       }
     },
-    "./clsx": {
-      "import": {
-        "types": "./dist/clsx/index.d.mts",
-        "default": "./dist/clsx/index.mjs"
-      },
-      "require": {
-        "types": "./dist/clsx/index.d.cts",
-        "default": "./dist/clsx/index.cjs"
-      }
-    },
     "./file": {
       "import": {
         "types": "./dist/file/index.d.mts",
