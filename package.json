@@ -10,7 +10,18 @@
   "keywords": [
     "mancuoj",
     "utils",
-    "typescript"
+    "typescript",
+    "string",
+    "object",
+    "file",
+    "math",
+    "geometry",
+    "graph",
+    "search",
+    "sort",
+    "data structure",
+    "npm",
+    "promise"
   ],
   "sideEffects": false,
   "exports": {
@@ -32,6 +43,16 @@
       "require": {
         "types": "./dist/file/index.d.cts",
         "default": "./dist/file/index.cjs"
+      }
+    },
+    "./object": {
+      "import": {
+        "types": "./dist/object/index.d.mts",
+        "default": "./dist/object/index.mjs"
+      },
+      "require": {
+        "types": "./dist/object/index.d.cts",
+        "default": "./dist/object/index.cjs"
       }
     },
     "./string": {
@@ -64,6 +85,7 @@
     "dev": "bunchee -w",
     "lint": "eslint .",
     "test": "vitest run --coverage --typecheck",
+    "bench": "vitest bench",
     "prepublishOnly": "pnpm build",
     "release": "bumpp && pnpm publish --access public",
     "prepare": "simple-git-hooks"
