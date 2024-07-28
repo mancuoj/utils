@@ -1,7 +1,7 @@
 import { getWords } from './get-words'
 
 export function startCase(str: string): string {
-  return getWords(str.trim())
+  return getWords(str)
     .map(word =>
       word === word.toUpperCase()
         ? word
