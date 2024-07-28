@@ -39,6 +39,15 @@ importers:
         specifier: ^2.0.4
         version: 2.0.4(@types/node@20.14.12)
 
+  benchmarks:
+    dependencies:
+      '@mancuoj/utils':
+        specifier: workspace:^
+        version: link:..
+      vitest:
+        specifier: ^2.0.4
+        version: 2.0.4(@types/node@20.14.12)
+
 packages:
 
   '@aashutoshrathi/word-wrap@1.2.6':

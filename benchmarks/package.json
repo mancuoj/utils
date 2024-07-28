@@ -1,0 +1,8 @@
+{
+  "name": "benchmarks",
+  "private": true,
+  "dependencies": {
+    "@mancuoj/utils": "workspace:^",
+    "vitest": "^2.0.4"
+  }
+}
