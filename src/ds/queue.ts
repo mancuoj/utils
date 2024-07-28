@@ -10,7 +10,7 @@ class Node<ValueType> {
 export class Queue<ValueType> implements Iterable<ValueType> {
   private _head?: Node<ValueType>
   private _tail?: Node<ValueType>
-  private _size: number
+  private _length: number
 
   /**
    * Tiny queue data structure.
@@ -24,7 +24,7 @@ export class Queue<ValueType> implements Iterable<ValueType> {
    * queue.enqueue('a');
    * queue.enqueue('b');
    *
-   * console.log(queue.size);
+   * console.log(queue.length);
    * //=> 2
    *
    * console.log(...queue);
@@ -40,7 +40,7 @@ export class Queue<ValueType> implements Iterable<ValueType> {
   constructor() {
     this._head = undefined
     this._tail = undefined
-    this._size = 0
+    this._length = 0
   }
 
   /**
@@ -60,7 +60,7 @@ export class Queue<ValueType> implements Iterable<ValueType> {
       this._tail = node
     }
 
-    this._size++
+    this._length++
   }
 
   /**
@@ -75,9 +75,9 @@ export class Queue<ValueType> implements Iterable<ValueType> {
 
     const current = this._head
     this._head = this._head.next
-    this._size--
+    this._length--
 
-    if (this._size === 0) {
+    if (this.isEmpty()) {
       this._tail = undefined
     }
 
@@ -99,14 +99,21 @@ export class Queue<ValueType> implements Iterable<ValueType> {
   clear(): void {
     this._head = undefined
     this._tail = undefined
-    this._size = 0
+    this._length = 0
   }
 
   /**
-   * @returns {number} The size of the queue.
+   * @returns {number} The length of the queue.
    */
-  get size(): number {
-    return this._size
+  get length(): number {
+    return this._length
+  }
+
+  /**
+   * @returns {boolean} Whether or not the queue is empty.
+   */
+  isEmpty(): boolean {
+    return this._length === 0
   }
 
   /**
