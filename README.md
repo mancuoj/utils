@@ -9,6 +9,10 @@
 
 Opinionated collection of common JavaScript / TypeScript utils.
 
+- Everyday utility functions with modern implementations
+- Fully typed - with TSDocs
+- Battle-tested with 100% test coverage
+
 ## Examples
 
 ```ts
