@@ -1,4 +1,3 @@
-import path from 'node:path'
 import process from 'node:process'
 import { afterAll, describe, expect, it } from 'vitest'
 import { isPathCwd } from './is-path-cwd'
@@ -10,34 +9,23 @@ describe('isPathCwd', () => {
     process.chdir(originalCwd)
   })
 
-  it('should return true for the current working directory', () => {
-    expect(isPathCwd(process.cwd())).toBe(true)
+  it('non-win32', () => {
+    expect(isPathCwd(process.cwd())).toBeTruthy()
+    expect(isPathCwd('.')).toBeTruthy()
+    expect(isPathCwd('..')).toBeFalsy()
+    expect(isPathCwd('/')).toBeFalsy()
+    expect(isPathCwd('foo')).toBeFalsy()
+    expect(isPathCwd(process.cwd().toUpperCase())).toBeFalsy()
   })
 
-  it('should return false for a different path', () => {
-    const differentPath = path.resolve(process.cwd(), '..')
-    expect(isPathCwd(differentPath)).toBe(false)
-  })
+  it('win32', () => {
+    const processPlatform = process.platform
+    Object.defineProperty(process, 'platform', { value: 'win32' })
 
-  it('should handle relative paths correctly', () => {
-    const relativePath = '.'
-    expect(isPathCwd(relativePath)).toBe(true)
-  })
+    expect(isPathCwd(process.cwd())).toBeTruthy()
+    expect(isPathCwd(process.cwd().toLowerCase())).toBeTruthy()
+    expect(isPathCwd(process.cwd().toUpperCase())).toBeTruthy()
 
-  it('should handle paths with different cases on Windows and non-Windows', () => {
-    if (process.platform === 'win32') {
-      const upperCaseCwd = process.cwd().toUpperCase()
-      expect(isPathCwd(upperCaseCwd)).toBe(true)
-
-      const lowerCaseCwd = process.cwd().toLowerCase()
-      expect(isPathCwd(lowerCaseCwd)).toBe(true)
-    }
-    else {
-      const upperCaseCwd = process.cwd().toUpperCase()
-      expect(isPathCwd(upperCaseCwd)).toBe(false)
-
-      const lowerCaseCwd = process.cwd().toLowerCase()
-      expect(isPathCwd(lowerCaseCwd)).toBe(false)
-    }
+    Object.defineProperty(process, 'platform', { value: processPlatform })
   })
 })
