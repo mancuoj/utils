@@ -35,6 +35,16 @@
         "default": "./dist/index.cjs"
       }
     },
+    "./array": {
+      "import": {
+        "types": "./dist/array/index.d.mts",
+        "default": "./dist/array/index.mjs"
+      },
+      "require": {
+        "types": "./dist/array/index.d.cts",
+        "default": "./dist/array/index.cjs"
+      }
+    },
     "./ds": {
       "import": {
         "types": "./dist/ds/index.d.mts",

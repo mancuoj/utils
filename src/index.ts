@@ -1,3 +1,4 @@
+export * from './array'
 export * from './ds'
 export * from './file'
 export * from './object'
