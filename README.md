@@ -7,10 +7,11 @@
 [![JSDocs][jsdocs-src]][jsdocs-href]
 [![License][license-src]][license-href]
 
-Opinionated collection of common JavaScript / TypeScript utils.
+Opinionated collection of common JavaScript / TypeScript utils by [@mancuoj](https://github.com/mancuoj).
 
 - Everyday utility functions with modern implementations
 - Fully typed - with TSDocs
+- Ships ESM and CJS bundles
 - Battle-tested with 100% test coverage
 
 ## Examples
@@ -24,6 +25,12 @@ clsx('hello', { world: 1, push: true, force: null })
 getWords('camelCase_snake_case-kebabCase')
 // [ "camel", "Case", "snake", "case", "kebab", "Case" ]
 ```
+
+## Credits
+
+- [@antfu](https://github.com/antfu)
+- [@sindresorhus](https://github.com/sindresorhus)
+- [es-toolkit](https://github.com/toss/es-toolkit)
 
 ## License
 
