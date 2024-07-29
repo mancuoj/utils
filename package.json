@@ -115,7 +115,6 @@
     "dev": "bunchee -w",
     "lint": "eslint .",
     "test": "vitest run --coverage --typecheck",
-    "bench": "vitest bench",
     "prepublishOnly": "pnpm build",
     "release": "bumpp && pnpm publish --access public",
     "prepare": "simple-git-hooks"
