@@ -1,6 +1,7 @@
 export * from './array'
 export * from './ds'
 export * from './file'
+export * from './math'
 export * from './object'
 export * from './predicate'
 export * from './string'
