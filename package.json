@@ -50,6 +50,7 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.24.1",
+    "@arethetypeswrong/cli": "^0.15.3",
     "@types/node": "^22.0.2",
     "@vitest/coverage-istanbul": "^2.0.5",
     "bumpp": "^9.4.1",
@@ -61,7 +62,7 @@
     "vitest": "^2.0.5"
   },
   "simple-git-hooks": {
-    "pre-commit": "pnpm lint-staged"
+    "pre-commit": "pnpm lint-staged && pnpm attw --pack ."
   },
   "lint-staged": {
     "*": "eslint --fix"
