@@ -10,6 +10,12 @@ describe('isNull', () => {
     expect(isNull(undefined)).toBe(false)
     expect(isNull('')).toBe(false)
     expect(isNull(123)).toBe(false)
+    expect(isNull({})).toBe(false)
+    expect(isNull([])).toBe(false)
+    expect(isNull(() => {})).toBe(false)
+    expect(isNull(/abc/)).toBe(false)
+    expect(isNull(new Date())).toBe(false)
+    expect(isNull(new Error('test error'))).toBe(false)
   })
 
   it('can be used with TypeScript as a type predicate', () => {

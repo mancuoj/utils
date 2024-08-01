@@ -12,7 +12,7 @@ import { toPath } from './to-path'
  *
  * @example
  * ```ts
- * console.log(rootDirectory('/Users/x/y/z'));     //=> '/'
+ * console.log(rootDirectory('/Users/x/y/z'));        //=> '/'
  * console.log(rootDirectory('C:\\Users\\x\\y\\z'));  //=> 'C:\\'
  * ```
  */

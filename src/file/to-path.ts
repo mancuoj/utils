@@ -9,10 +9,10 @@ import { fileURLToPath } from 'node:url'
  * @example
  * ```ts
  * const url = new URL('file:///tmp/hello');
- * console.log(toPath(url)); //=> '/tmp/hello'
+ * console.log(toPath(url));  //=> '/tmp/hello'
  *
  * const path = '/tmp/hello';
- * console.log(toPath(path)); //=> '/tmp/hello'
+ * console.log(toPath(path));  //=> '/tmp/hello'
  * ```
  */
 export function toPath(path: URL | string): string {

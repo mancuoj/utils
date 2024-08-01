@@ -20,21 +20,13 @@ export class Queue<T> implements Iterable<T> {
    * @example
    * ```ts
    * const queue = new Queue();
-   *
    * queue.enqueue('a');
    * queue.enqueue('b');
    *
-   * console.log(queue.length);
-   * //=> 2
-   *
-   * console.log(...queue);
-   * //=> 'a b'
-   *
-   * console.log(queue.dequeue());
-   * //=> 'a'
-   *
-   * console.log(queue.dequeue());
-   * //=> 'b'
+   * console.log(queue.length);     //=> 2
+   * console.log(...queue);         //=> 'a b'
+   * console.log(queue.dequeue());  //=> 'a'
+   * console.log(queue.dequeue());  //=> 'b'
    * ```
    */
   constructor() {
