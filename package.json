@@ -49,16 +49,16 @@
     "prepare": "simple-git-hooks"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^2.23.2",
-    "@types/node": "^20.14.12",
-    "@vitest/coverage-istanbul": "^2.0.4",
+    "@antfu/eslint-config": "^2.24.1",
+    "@types/node": "^22.0.2",
+    "@vitest/coverage-istanbul": "^2.0.5",
     "bumpp": "^9.4.1",
-    "bunchee": "^5.2.2",
+    "bunchee": "^5.3.1",
     "eslint": "^9.8.0",
     "lint-staged": "^15.2.7",
     "simple-git-hooks": "^2.11.1",
     "typescript": "^5.5.4",
-    "vitest": "^2.0.4"
+    "vitest": "^2.0.5"
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm lint-staged"
