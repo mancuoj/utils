@@ -18,7 +18,7 @@ export class Queue<T> implements Iterable<T> {
    * Creates an instance of a queue.
    *
    * @example
-   * ```
+   * ```ts
    * const queue = new Queue();
    *
    * queue.enqueue('a');

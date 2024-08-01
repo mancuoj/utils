@@ -4,6 +4,12 @@
  * @param a - First number
  * @param b - Second number
  * @returns The greatest common divisor of a and b
+ *
+ * @example
+ * ```ts
+ * console.log(gcd(48, 18));   //=> 6
+ * console.log(gcd(48, -18));  //=> 6
+ * ```
  */
 export function gcd(a: number, b: number): number {
   let tmp: number

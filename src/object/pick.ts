@@ -11,9 +11,11 @@
  * @returns {Pick<T, K>} A new object with the specified keys picked.
  *
  * @example
+ * ```ts
  * const obj = { a: 1, b: 2, c: 3 };
  * const result1 = pick(obj, ['a', 'c']);  // result will be { a: 1, c: 3 }
  * const result2 = pick(obj, ['a', 'd']);  // result will be { a: 1 }
+ * ```
  */
 export function pick<T extends Record<string, any>, K extends keyof T>(obj: T, keys: K[]): Pick<T, K> {
   const result = {} as Pick<T, K>

@@ -8,8 +8,10 @@ import process from 'node:process'
  * @returns {boolean} `true` if the given path is the current working directory, otherwise `false`.
  *
  * @example
+ * ```ts
  * console.log(isPathCwd(process.cwd()));       //=> true
  * console.log(isPathCwd('/some/other/path'));  //=> false
+ * ```
  */
 export function isPathCwd(path: string): boolean {
   const cwd = process.cwd()

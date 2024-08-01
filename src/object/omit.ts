@@ -11,9 +11,11 @@
  * @returns {Omit<T, K>} A new object with the specified keys omitted.
  *
  * @example
+ * ```ts
  * const obj = { a: 1, b: 2, c: 3 };
  * const result1 = omit(obj, ['b', 'c']);  // result will be { a: 1 }
  * const result2 = omit(obj, ['a', 'd']);  // result will be { b: 2, c: 3 }
+ * ```
  */
 export function omit<T extends Record<string, any>, K extends keyof T>(obj: T, keys: K[]): Omit<T, K> {
   const result = { ...obj }

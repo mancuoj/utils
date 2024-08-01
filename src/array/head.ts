@@ -8,6 +8,7 @@
  * @returns {T | undefined} The first element of the array, or `undefined` if the array is empty.
  *
  * @example
+ * ```ts
  * const arr = [1, 2, 3];
  * const firstElement = head(arr);
  * // firstElement will be 1
@@ -15,6 +16,7 @@
  * const emptyArr: number[] = [];
  * const noElement = head(emptyArr);
  * // noElement will be undefined
+ * ```
  */
 export function head<T>(arr: readonly [T, ...T[]]): T
 export function head<T>(arr: readonly T[]): T | undefined

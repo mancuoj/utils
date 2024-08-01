@@ -10,6 +10,7 @@
  * @returns {x is null} True if the value is null, false otherwise.
  *
  * @example
+ * ```ts
  * const value1 = null;
  * console.log(isNull(value1));  //=> true
  *
@@ -18,6 +19,7 @@
  *
  * const value3 = 42;
  * console.log(isNull(value3));  //=> false
+ * ```
  */
 export function isNull(x: unknown): x is null {
   return x === null

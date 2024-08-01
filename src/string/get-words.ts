@@ -12,11 +12,13 @@ const CASE_SPLIT_PATTERN = /[A-Z]?[a-z]+|\d+|[A-Z]+(?![a-z])/g
  * @returns {string[]} An array of words extracted from the input string.
  *
  * @example
+ * ```ts
  * const words1 = getWords('helloWorld');      // words will be ['hello', 'World']
  * const words2 = getWords('HelloWorld');      // words will be ['Hello', 'World']
  * const words3 = getWords('hello-world');     // words will be ['hello', 'world']
  * const words4 = getWords('hello_world123');  // words will be ['hello', 'world', '123']
  * const words5 = getWords('helloWorldHTTP');  // words will be ['hello', 'World', 'HTTP']
+ * ```
  */
 export function getWords(str: string): string[] {
   return Array.from(str.match(CASE_SPLIT_PATTERN) ?? [])

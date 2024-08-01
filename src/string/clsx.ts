@@ -46,8 +46,10 @@ function toVal(input: ClassValue): string | number {
  * @returns {string} The combined class string.
  *
  * @example
+ * ```ts
  * const className = clsx('btn', ['btn-primary', { disabled: isDisabled }]);
  * // className will be 'btn btn-primary disabled' if isDisabled is true
+ * ```
  */
 export function clsx(...args: ClassValue[]): string {
   return args.map(toVal).filter(Boolean).join(' ')

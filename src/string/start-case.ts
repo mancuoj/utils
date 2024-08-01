@@ -9,10 +9,12 @@ import { getWords } from './get-words'
  * @returns {string} The converted string.
  *
  * @example
+ * ```ts
  * const result1 = startCase('hello world');  // result will be 'Hello World'
  * const result2 = startCase('HELLO WORLD');  // result will be 'Hello World'
  * const result3 = startCase('hello-world');  // result will be 'Hello World'
  * const result4 = startCase('hello_world');  // result will be 'Hello World'
+ * ```
  */
 export function startCase(str: string): string {
   return getWords(str)
