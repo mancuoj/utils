@@ -12,8 +12,8 @@ import { toPath } from './to-path'
  *
  * @example
  * ```ts
- * console.log(rootDirectory('/users/mancuoj'));      //=> '/'
- * console.log(rootDirectory('C:\\Users\\mancuoj'));  //=> 'C:\\'
+ * console.log(rootDirectory('/Users/x/y/z'));     //=> '/'
+ * console.log(rootDirectory('C:\\Users\\x\\y\\z'));  //=> 'C:\\'
  * ```
  */
 export function rootDir(input: string | URL): string {
