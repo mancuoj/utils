@@ -13,13 +13,9 @@ describe('isPathCwd', () => {
     expect(isPathCwd(process.cwd())).toBeTruthy()
     expect(isPathCwd('.')).toBeTruthy()
     expect(isPathCwd('..')).toBeFalsy()
-    expect(isPathCwd('/')).toBeFalsy()
     expect(isPathCwd('foo')).toBeFalsy()
-
-    if (process.platform === 'win32')
-      expect(isPathCwd(process.cwd().toUpperCase())).toBeTruthy()
-    else
-      expect(isPathCwd(process.cwd().toUpperCase())).toBeFalsy()
+    expect(isPathCwd('/')).toBeFalsy()
+    expect(isPathCwd('/some/other/path')).toBeFalsy()
   })
 
   it('win32', () => {
@@ -29,6 +25,8 @@ describe('isPathCwd', () => {
     expect(isPathCwd(process.cwd())).toBeTruthy()
     expect(isPathCwd(process.cwd().toLowerCase())).toBeTruthy()
     expect(isPathCwd(process.cwd().toUpperCase())).toBeTruthy()
+    expect(isPathCwd('C:\\')).toBeFalsy()
+    expect(isPathCwd('C:\\some\\other\\path')).toBeFalsy()
 
     Object.defineProperty(process, 'platform', { value: processPlatform })
   })
