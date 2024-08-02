@@ -1,4 +1,5 @@
 export * from './array'
+export * from './cli'
 export * from './ds'
 export * from './file'
 export * from './math'
