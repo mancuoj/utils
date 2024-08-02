@@ -17,7 +17,7 @@ const _DRIVE_LETTER_START_RE = /^[A-Z]:\//i
  * //=> "E:/Folder/Subfolder/file.txt"
  * ```
  */
-export function normalizeWindowsPath(input: string = ''): string {
+export function normalizeWindowsPath(input: string): string {
   if (!input) {
     return input
   }

@@ -8,9 +8,8 @@ describe('normalizeWindowsPath', () => {
     expect(normalizeWindowsPath('E:\\Folder\\Subfolder\\file.txt')).toBe('E:/Folder/Subfolder/file.txt')
   })
 
-  it('should handle empty string or undefined', () => {
+  it('should handle empty string', () => {
     expect(normalizeWindowsPath('')).toBe('')
-    expect(normalizeWindowsPath(undefined)).toBe('')
   })
 
   it('should handle already normalized paths', () => {
