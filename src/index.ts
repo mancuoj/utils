@@ -1,5 +1,6 @@
 export * from './array'
 export * from './cli'
+export * from './color'
 export * from './ds'
 export * from './file'
 export * from './math'
