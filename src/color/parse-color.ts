@@ -10,9 +10,9 @@
  *
  * @example
  * ```ts
- * parseColor('#3498db');     //=> [52, 152, 219]
- * parseColor('#abc');        //=> [170, 187, 204]
- * parseColor('52,152,219');  //=> [52, 152, 219]
+ * console.log(parseColor('#3498db'));     //=> [52, 152, 219]
+ * console.log(parseColor('#abc'));        //=> [170, 187, 204]
+ * console.log(parseColor('52,152,219'));  //=> [52, 152, 219]
  * ```
  */
 export function parseColor(color: string): number[] {
