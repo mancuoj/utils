@@ -1,5 +1,3 @@
-import { removeWhitespace } from '../string'
-
 /**
  * Parses a color string into an array of RGB components.
  *
@@ -18,8 +16,6 @@ import { removeWhitespace } from '../string'
  * ```
  */
 export function parseColor(color: string): number[] {
-  color = removeWhitespace(color)
-
   const hexMatch = /^#?([\da-f]{2})([\da-f]{2})([\da-f]{2})$/i.exec(color)
   if (hexMatch)
     return hexMatch.splice(1).map(c => Number.parseInt(c, 16))
