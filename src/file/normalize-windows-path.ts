@@ -10,11 +10,11 @@ const _DRIVE_LETTER_START_RE = /^[A-Z]:\//i
  *
  * @example
  * ```ts
- * console.log(normalizeWindowsPath("c:\\Users\\Documents"));
- * //=> "C:/Users/Documents"
+ * console.log(normalizeWindowsPath('c:\\Users\\Documents'));
+ * //=> 'C:/Users/Documents'
  *
- * console.log(normalizeWindowsPath("E:\\Folder\\Subfolder\\file.txt"));
- * //=> "E:/Folder/Subfolder/file.txt"
+ * console.log(normalizeWindowsPath('E:\\Folder\\Subfolder\\file.txt'));
+ * //=> 'E:/Folder/Subfolder/file.txt'
  * ```
  */
 export function normalizeWindowsPath(input: string): string {
