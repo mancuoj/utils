@@ -10,9 +10,10 @@
 Opinionated collection of common JavaScript / TypeScript utils.
 
 - Everyday utility functions with modern implementations
-- Fully typed - with TSDocs
+- Fully typed - with TSDoc
 - Ships ESM and CJS bundles
 - Battle-tested with 100% test coverage
+- ❤️
 
 ## License
 
