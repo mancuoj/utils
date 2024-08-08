@@ -10,10 +10,10 @@
  * @example
  * ```ts
  * const arr = [1, 2, 3];
- * const emptyArr: number[] = [];
+ * const arr2 = [];
  *
- * console.log(head(arr));       //=> 1
- * console.log(head(emptyArr));  //=> undefined
+ * console.log(head(arr));   //=> 1
+ * console.log(head(arr2));  //=> undefined
  * ```
  */
 export function head<T>(arr: readonly [T, ...T[]]): T
