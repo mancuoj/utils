@@ -1,7 +1,7 @@
 /**
  * The general list of blocked ports.
  *
- * See https://chromium.googlesource.com/chromium/src.git/+/refs/heads/master/net/base/port_util.cc
+ * @see https://chromium.googlesource.com/chromium/src.git/+/refs/heads/master/net/base/port_util.cc
  */
 export const unsafePorts = new Set([
   1, // tcpmux
@@ -89,8 +89,8 @@ export const unsafePorts = new Set([
 /**
  * Checks if the given port is considered unsafe.
  *
- * @param {number} port - The port number to check.
- * @returns {boolean} `true` if the port is unsafe, otherwise `false`.
+ * @param port - The port number to check.
+ * @returns `true` if the port is unsafe, otherwise `false`.
  *
  * @example
  * ```ts

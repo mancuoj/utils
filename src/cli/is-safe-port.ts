@@ -3,8 +3,8 @@ import { isUnsafePort } from './is-unsafe-port'
 /**
  * Checks if the given port is considered safe.
  *
- * @param {number} port - The port number to check.
- * @returns {boolean} `true` if the port is safe, otherwise `false`.
+ * @param port - The port number to check.
+ * @returns `true` if the port is safe, otherwise `false`.
  *
  * @example
  * ```ts

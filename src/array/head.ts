@@ -4,18 +4,16 @@
  * This function takes an array and returns the first element of the array.
  * If the array is empty, the function returns `undefined`.
  *
- * @param {T[]} arr - The array from which to get the first element.
- * @returns {T | undefined} The first element of the array, or `undefined` if the array is empty.
+ * @param arr - The array from which to get the first element.
+ * @returns The first element of the array, or `undefined` if the array is empty.
  *
  * @example
  * ```ts
  * const arr = [1, 2, 3];
- * const firstElement = head(arr);
- * // firstElement will be 1
- *
  * const emptyArr: number[] = [];
- * const noElement = head(emptyArr);
- * // noElement will be undefined
+ *
+ * console.log(head(arr));       //=> 1
+ * console.log(head(emptyArr));  //=> undefined
  * ```
  */
 export function head<T>(arr: readonly [T, ...T[]]): T
