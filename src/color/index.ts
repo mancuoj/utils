@@ -1,2 +1,6 @@
 export { parseColor } from './parse-color'
 export { toHexValue } from './to-hex-value'
+export { tint } from './tint'
+export { withTint } from './with-tint'
+export { shade } from './shade'
+export { withShade } from './with-shade'
