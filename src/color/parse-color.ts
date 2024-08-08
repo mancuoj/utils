@@ -4,9 +4,9 @@
  * This function accepts color strings in the formats `#ABC`, `#AABBCC`, or `r,g,b`.
  * It returns an array of three numbers representing the red, green, and blue components.
  *
- * @param {string} color - The color string to parse.
- * @returns {number[]} An array of three numbers representing the RGB components.
- * @throws {Error} If the input color format is invalid.
+ * @param color - The color string to parse.
+ * @returns An array of three numbers representing the RGB components.
+ * @throws If the input color format is invalid.
  *
  * @example
  * ```ts

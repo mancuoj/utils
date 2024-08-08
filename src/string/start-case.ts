@@ -5,15 +5,15 @@ import { getWords } from './get-words'
  *
  * Start case is the naming convention in which each word is written with an initial capital letter.
  *
- * @param {string} str - The string to convert.
- * @returns {string} The converted string.
+ * @param str - The string to convert.
+ * @returns The converted string.
  *
  * @example
  * ```ts
- * const result1 = startCase('hello world');  // result will be 'Hello World'
- * const result2 = startCase('HELLO WORLD');  // result will be 'Hello World'
- * const result3 = startCase('hello-world');  // result will be 'Hello World'
- * const result4 = startCase('hello_world');  // result will be 'Hello World'
+ * console.log(startCase('hello world'));  //=> 'Hello World'
+ * console.log(startCase('HELLO WORLD'));  //=> 'Hello World'
+ * console.log(startCase('hello-world'));  //=> 'Hello World'
+ * console.log(startCase('hello_world'));  //=> 'Hello World'
  * ```
  */
 export function startCase(str: string): string {

@@ -19,8 +19,8 @@ export type ClassValue =
  * - Objects are converted to a space-separated string of keys whose values are truthy.
  * - Null, undefined, booleans, and other non-truthy values are ignored.
  *
- * @param {ClassValue} input - The value to convert.
- * @returns {string | number} The converted value.
+ * @param input - The value to convert.
+ * @returns The converted value.
  */
 function toVal(input: ClassValue): string | number {
   if (typeof input === 'string' || typeof input === 'number')
@@ -42,8 +42,8 @@ function toVal(input: ClassValue): string | number {
  * It filters out nullish and falsy values, recursively flattens arrays, and converts objects to
  * space-separated strings of their keys if their values are truthy.
  *
- * @param {...ClassValue[]} args - The class values to combine.
- * @returns {string} The combined class string.
+ * @param args - The class values to combine.
+ * @returns The combined class string.
  *
  * @example
  * ```ts

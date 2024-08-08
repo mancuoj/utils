@@ -3,17 +3,16 @@
  *
  * The main use of this function is to be used with TypeScript as a type predicate.
  *
- * @template T - The type of value.
- * @param {T | null | undefined} x - The value to test if it is not null nor undefined.
- * @returns {x is T} True if the value is not null nor undefined, false otherwise.
+ * @param x - The value to test if it is not null nor undefined.
+ * @returns True if the value is not null nor undefined, false otherwise.
  *
  * @example
  * ```ts
- * // Here the type of `arr` is (number | undefined)[]
- * const arr = [1, undefined, 3];
+ * const arr = [1, 2, null, 4, undefined]
+ * const result = arr.filter(isNotNil)
  *
- * // Here the type of `result` is narrowed to number[]
- * const result = arr.filter(isNotNil);
+ * // Here the type of result is narrowed to `number[]`
+ * console.log(result);  //=> [1, 2, 4]
  * ```
  */
 export function isNotNil<T>(x: T | null | undefined): x is T {

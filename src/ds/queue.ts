@@ -8,8 +8,20 @@ class Node<T> {
 }
 
 export class Queue<T> implements Iterable<T> {
+  /**
+   * The head of the queue.
+   * @internal
+   */
   private _head?: Node<T>
+  /**
+   * The tail of the queue.
+   * @internal
+   */
   private _tail?: Node<T>
+  /**
+   * The length of the queue.
+   * @internal
+   */
   private _length: number
 
   /**
@@ -38,7 +50,7 @@ export class Queue<T> implements Iterable<T> {
   /**
    * Adds a value to the queue.
    *
-   * @param {T} value - The value to add.
+   * @param value - The value to add.
    */
   enqueue(value: T): void {
     const node = new Node(value)
@@ -58,7 +70,7 @@ export class Queue<T> implements Iterable<T> {
   /**
    * Remove the next value in the queue.
    *
-   * @returns {T | undefined} The removed value or `undefined` if the queue is empty.
+   * @returns The removed value or `undefined` if the queue is empty.
    */
   dequeue(): T | undefined {
     if (!this._head) {
@@ -79,7 +91,7 @@ export class Queue<T> implements Iterable<T> {
   /**
    * Get the next value in the queue without removing it.
    *
-   * @returns {T | undefined} The value or `undefined` if the queue is empty.
+   * @returns The value or `undefined` if the queue is empty.
    */
   peek(): T | undefined {
     return this._head?.value
@@ -95,14 +107,14 @@ export class Queue<T> implements Iterable<T> {
   }
 
   /**
-   * @returns {number} The length of the queue.
+   * @returns The length of the queue.
    */
   get length(): number {
     return this._length
   }
 
   /**
-   * @returns {boolean} Whether or not the queue is empty.
+   * @returns Whether or not the queue is empty.
    */
   isEmpty(): boolean {
     return this._length === 0
@@ -113,7 +125,7 @@ export class Queue<T> implements Iterable<T> {
    *
    * Allows you to use a for...of loop to iterate over the queue.
    *
-   * @returns {IterableIterator<T>} An iterator for the queue.
+   * @returns An iterator for the queue.
    */
   *[Symbol.iterator](): IterableIterator<T> {
     let current = this._head

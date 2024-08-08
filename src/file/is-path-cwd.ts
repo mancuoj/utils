@@ -4,8 +4,8 @@ import process from 'node:process'
 /**
  * Checks if the given path is the current working directory.
  *
- * @param {string} path - The path to check.
- * @returns {boolean} `true` if the given path is the current working directory, otherwise `false`.
+ * @param path - The path to check.
+ * @returns `true` if the given path is the current working directory, otherwise `false`.
  *
  * @example
  * ```ts

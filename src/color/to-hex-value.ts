@@ -1,8 +1,8 @@
 /**
  * Converts an array of RGB components to a hexadecimal color string.
  *
- * @param {number[]} components - An array of three numbers representing the RGB components.
- * @returns {string} The hexadecimal color string in the format `#AABBCC`.
+ * @param components - An array of three numbers representing the RGB components.
+ * @returns The hexadecimal color string in the format `#AABBCC`.
  *
  * @example
  * ```ts

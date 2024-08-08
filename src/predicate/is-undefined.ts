@@ -6,18 +6,15 @@
  *
  * This function can also serve as a type predicate in TypeScript, narrowing the type of the argument to `undefined`.
  *
- * @param {unknown} x - The value to test if it is undefined.
- * @returns {x is undefined} true if the value is undefined, false otherwise.
+ * @param x - The value to test if it is undefined.
+ * @returns true if the value is undefined, false otherwise.
  *
  * @example
- * const value1 = undefined;
- * console.log(isUndefined(value1));  //=> true
- *
- * const value2 = null;
- * console.log(isUndefined(value2));  //=> false
- *
- * const value3 = 42;
- * console.log(isUndefined(value3));  //=> false
+ * ```ts
+ * console.log(isUndefined(undefined));  //=> true
+ * console.log(isUndefined(null));       //=> false
+ * console.log(isUndefined(42));         //=> false
+ * ```
  */
 export function isUndefined(x: unknown): x is undefined {
   return x === undefined

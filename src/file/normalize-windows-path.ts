@@ -5,8 +5,8 @@ const _DRIVE_LETTER_START_RE = /^[A-Z]:\//i
  *
  * This function replaces backslashes with forward slashes and converts the drive letter to uppercase.
  *
- * @param {string} input - The Windows path to normalize.
- * @returns {string} The normalized POSIX path.
+ * @param input - The Windows path to normalize.
+ * @returns The normalized POSIX path.
  *
  * @example
  * ```ts

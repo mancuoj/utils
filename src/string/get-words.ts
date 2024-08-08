@@ -8,16 +8,16 @@ const CASE_SPLIT_PATTERN = /[A-Z]?[a-z]+|\d+|[A-Z]+(?![a-z])/g
  * - A sequence of numbers
  * - A sequence of uppercase letters, provided they are not followed by lowercase letters
  *
- * @param {string} str - The string from which to extract words.
- * @returns {string[]} An array of words extracted from the input string.
+ * @param str - The string from which to extract words.
+ * @returns An array of words extracted from the input string.
  *
  * @example
  * ```ts
- * const words1 = getWords('helloWorld');      // words will be ['hello', 'World']
- * const words2 = getWords('HelloWorld');      // words will be ['Hello', 'World']
- * const words3 = getWords('hello-world');     // words will be ['hello', 'world']
- * const words4 = getWords('hello_world123');  // words will be ['hello', 'world', '123']
- * const words5 = getWords('helloWorldHTTP');  // words will be ['hello', 'World', 'HTTP']
+ * console.log(getWords('helloWorld'));      //=> ['hello', 'World']
+ * console.log(getWords('HelloWorld'));      //=> ['Hello', 'World']
+ * console.log(getWords('hello-world'));     //=> ['hello', 'world']
+ * console.log(getWords('hello_world123'));  //=> ['hello', 'world', '123']
+ * console.log(getWords('helloWorldHTTP'));  //=> ['hello', 'World', 'HTTP']
  * ```
  */
 export function getWords(str: string): string[] {

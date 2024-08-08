@@ -4,20 +4,24 @@
  * This function takes an object and an array of keys, and returns a new object that
  * excludes the properties corresponding to the specified keys.
  *
- * @template T - The type of object.
- * @template K - The type of keys in object.
- * @param {T} obj - The object to omit keys from.
- * @param {K[]} keys - An array of keys to be omitted from the object.
- * @returns {Omit<T, K>} A new object with the specified keys omitted.
+ * @param obj - The object to omit keys from.
+ * @param keys - An array of keys to be omitted from the object.
+ * @returns A new object with the specified keys omitted.
  *
  * @example
  * ```ts
  * const obj = { a: 1, b: 2, c: 3 };
- * const result1 = omit(obj, ['b', 'c']);  // result will be { a: 1 }
- * const result2 = omit(obj, ['a', 'd']);  // result will be { b: 2, c: 3 }
+ * console.log(omit(obj, ['a', 'c']));  //=> { b: 2 }
+ * console.log(omit(obj, ['a', 'd']));  //=> { b: 2, c: 3 }
  * ```
  */
-export function omit<T extends Record<string, any>, K extends keyof T>(obj: T, keys: K[]): Omit<T, K> {
+export function omit<
+  T extends Record<string, any>,
+  K extends keyof T,
+>(
+  obj: T,
+  keys: K[],
+): Omit<T, K> {
   const result = { ...obj }
 
   for (const key of keys) {

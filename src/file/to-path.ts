@@ -3,8 +3,8 @@ import { fileURLToPath } from 'node:url'
 /**
  * Converts a URL object or a string path to a string path.
  *
- * @param {URL | string} path - The URL object or string path to convert.
- * @returns {string} The converted string path.
+ * @param path - The URL object or string path to convert.
+ * @returns The converted string path.
  *
  * @example
  * ```ts
