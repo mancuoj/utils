@@ -1,4 +1,3 @@
-import { describe, expect, it } from 'vitest'
 import { rootDir } from './root-dir'
 
 describe('rootDir', () => {

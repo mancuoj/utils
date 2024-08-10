@@ -1,4 +1,3 @@
-import { describe, expect, it } from 'vitest'
 import { tail } from './tail'
 
 describe('tail', () => {

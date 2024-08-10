@@ -1,4 +1,3 @@
-import { describe, expect, it } from 'vitest'
 import { getThemeColors } from './get-theme-colors'
 
 describe('theme-colors', () => {

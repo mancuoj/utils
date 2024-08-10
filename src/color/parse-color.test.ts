@@ -1,4 +1,3 @@
-import { describe, expect, it } from 'vitest'
 import { parseColor } from './parse-color'
 
 describe('parseColor', () => {

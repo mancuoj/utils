@@ -1,4 +1,3 @@
-import { describe, expect, it } from 'vitest'
 import { withShade } from './with-shade'
 
 describe('withShade', () => {

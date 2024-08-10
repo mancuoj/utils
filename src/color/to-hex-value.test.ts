@@ -1,4 +1,3 @@
-import { describe, expect, it } from 'vitest'
 import { toHexValue } from './to-hex-value'
 
 describe('toHexValue', () => {

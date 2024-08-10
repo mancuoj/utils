@@ -1,4 +1,3 @@
-import { describe, expect, it } from 'vitest'
 import { getWords } from './get-words'
 
 describe('caseSplitPattern', () => {

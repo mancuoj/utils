@@ -1,4 +1,3 @@
-import { describe, expect, it } from 'vitest'
 import { clsx } from './clsx'
 
 describe('ported from origin clsx test', () => {

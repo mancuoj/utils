@@ -1,4 +1,3 @@
-import { describe, expect, it } from 'vitest'
 import { tint } from './tint'
 
 describe('tint', () => {

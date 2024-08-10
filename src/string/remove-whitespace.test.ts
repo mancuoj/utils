@@ -1,4 +1,3 @@
-import { describe, expect, it } from 'vitest'
 import { removeWhitespace } from './remove-whitespace'
 
 describe('removeWhitespace', () => {

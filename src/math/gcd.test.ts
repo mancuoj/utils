@@ -1,4 +1,3 @@
-import { describe, expect, it } from 'vitest'
 import { gcd } from './gcd'
 
 describe('gcd', () => {

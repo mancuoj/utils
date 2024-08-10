@@ -1,4 +1,3 @@
-import { describe, expect, it } from 'vitest'
 import { traversePathUp } from './traverse-path-up'
 
 describe('traversePathUp', () => {

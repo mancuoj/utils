@@ -1,4 +1,3 @@
-import { describe, expect, it } from 'vitest'
 import { normalizeWindowsPath } from './normalize-windows-path'
 
 describe('normalizeWindowsPath', () => {

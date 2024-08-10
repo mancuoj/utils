@@ -1,4 +1,3 @@
-import { describe, expect, it } from 'vitest'
 import { isUnsafePort } from './is-unsafe-port'
 
 describe('isUnsafePort', () => {
