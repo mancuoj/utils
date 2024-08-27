@@ -16,7 +16,7 @@ export function isColorSupported(): boolean {
     'FORCE_COLOR' in env
     || argv.includes('--color')
     || process.platform === 'win32'
-    || (tty.isatty(1) && env.TERM !== 'dumb')
+    || (require != null && tty.isatty(1) && env.TERM !== 'dumb')
     || 'CI' in env
   )
 }
