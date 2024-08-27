@@ -3,13 +3,13 @@ import tty from 'node:tty'
 import { isColorSupported } from './is-color-supported'
 
 describe('isColorSupported', () => {
-  const originalEnv = { ...process.env }
-  const originalArgv = [...process.argv]
+  const originalEnv = process.env
+  const originalArgv = process.argv || []
   const originalPlatform = process.platform
 
   afterAll(() => {
-    process.env = { ...originalEnv }
-    process.argv = [...originalArgv]
+    process.env = originalEnv
+    process.argv = originalArgv
   })
 
   it('should return false if NO_COLOR is set', () => {
