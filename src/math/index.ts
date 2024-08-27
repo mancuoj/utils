@@ -1,3 +1,5 @@
 export { gcd } from './gcd'
-export { randomInteger } from './random-integer'
 export { sum } from './sum'
+export { sumBy } from './sum-by'
+export { random } from './random'
+export { randomInt } from './random-int'

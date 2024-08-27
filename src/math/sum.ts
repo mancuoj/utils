@@ -10,7 +10,6 @@
  * console.log(sum([1, 2, 3]));        //=> 6
  * ```
  */
-
 export function sum(numbers: readonly number[]): number {
   return numbers.reduce((acc, curr) => acc + curr, 0)
 }
