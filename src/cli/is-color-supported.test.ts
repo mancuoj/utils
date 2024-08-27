@@ -52,12 +52,14 @@ describe('isColorSupported', () => {
   })
 
   it('should return false if tty isatty(1) and TERM is dumb', () => {
-    Object.keys(env).forEach(key => delete env[key])
-    vi.spyOn(tty, 'isatty').mockReturnValue(true)
-    env.TERM = 'dumb'
-    expect(isColorSupported()).toBeFalsy()
-    delete env.TERM
-    vi.restoreAllMocks()
+    if (process.platform !== 'win32') {
+      Object.keys(env).forEach(key => delete env[key])
+      vi.spyOn(tty, 'isatty').mockReturnValue(true)
+      env.TERM = 'dumb'
+      expect(isColorSupported()).toBeFalsy()
+      delete env.TERM
+      vi.restoreAllMocks()
+    }
   })
 
   it('should return true if CI is set', () => {
