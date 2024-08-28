@@ -11,7 +11,7 @@ import { getWords } from './get-words'
  *
  * @example
  * ```ts
- * console.log(snakeCase('helloWorld'));  //=> 'hello_world'
+ * console.log(snakeCase('helloWorld'));   //=> 'hello_world'
  * console.log(snakeCase('Hello world'));  //=> 'hello_world'
  * console.log(snakeCase('hello-world'));  //=> 'hello_world'
  * console.log(snakeCase('HTTPRequest'));  //=> 'http_request'

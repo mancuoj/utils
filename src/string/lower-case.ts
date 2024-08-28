@@ -8,10 +8,10 @@ import { getWords } from './get-words'
  *
  * @example
  * ```ts
- * console.log(lowerCase('helloWorld')) // hello world
- * console.log(lowerCase('HELLO WORLD')) // hello world
- * console.log(lowerCase('Hello-world')) // hello world
- * console.log(lowerCase('HTTPRequest')) // http request
+ * console.log(lowerCase('helloWorld'));   //=> 'hello world'
+ * console.log(lowerCase('HELLO WORLD'));  //=> 'hello world'
+ * console.log(lowerCase('Hello-world'));  //=> 'hello world'
+ * console.log(lowerCase('HTTPRequest'));  //=> 'http request'
  * ```
  */
 export function lowerCase(str: string): string {

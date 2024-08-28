@@ -12,7 +12,7 @@ import { getWords } from './get-words'
  *
  * @example
  * ```ts
- * console.log(pascalCase('helloWorld'));  //=> 'HelloWorld'
+ * console.log(pascalCase('helloWorld'));   //=> 'HelloWorld'
  * console.log(pascalCase('Hello world'));  //=> 'HelloWorld'
  * console.log(pascalCase('hello-world'));  //=> 'HelloWorld'
  * console.log(pascalCase('HTTPRequest'));  //=> 'HttpRequest'

@@ -12,7 +12,7 @@ import { getWords } from './get-words'
  *
  * @example
  * ```ts
- * console.log(camelCase('helloWorld'));  //=> 'helloWorld'
+ * console.log(camelCase('helloWorld'));   //=> 'helloWorld'
  * console.log(camelCase('Hello world'));  //=> 'helloWorld'
  * console.log(camelCase('hello-world'));  //=> 'helloWorld'
  * console.log(camelCase('HTTPRequest'));  //=> 'httpRequest'
