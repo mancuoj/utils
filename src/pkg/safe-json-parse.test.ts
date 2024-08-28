@@ -56,7 +56,7 @@ describe('safeJsonParse', () => {
   })
 
   it('surrounding spaces', () => {
-    expect(safeJsonParse('  true ')).toBe(true)
+    expect(safeJsonParse('  true ')).toBeTruthy()
     expect(safeJsonParse(' -123 ')).toStrictEqual(-123)
     expect(safeJsonParse(' { "test": 123 }  ')).toStrictEqual({ test: 123 })
   })

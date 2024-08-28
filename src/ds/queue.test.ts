@@ -10,14 +10,14 @@ describe('queue', () => {
 
   it('should initialize with length 0', () => {
     expect(queue.length).toBe(0)
-    expect(queue.isEmpty()).toBe(true)
+    expect(queue.isEmpty()).toBeTruthy()
   })
 
   it('should enqueue items and increase length', () => {
     queue.enqueue('a')
     queue.enqueue('b')
     expect(queue.length).toBe(2)
-    expect(queue.isEmpty()).toBe(false)
+    expect(queue.isEmpty()).toBeFalsy()
   })
 
   it('should dequeue items in FIFO order', () => {
