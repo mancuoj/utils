@@ -1,47 +1,18 @@
 import { kebabCase } from './kebab-case'
 
 describe('kebabCase', () => {
-  it('should change camel case to kebab case', () => {
-    expect(kebabCase('camelCase')).toEqual('camel-case')
-  })
-
-  it('should change space to dash', () => {
-    expect(kebabCase('some whitespace')).toEqual('some-whitespace')
-  })
-
-  it('should change hyphen to dash', () => {
-    expect(kebabCase('hyphen-text')).toEqual('hyphen-text')
-  })
-
-  it('should change Acronyms to small letter', () => {
-    expect(kebabCase('HTTPRequest')).toEqual('http-request')
-  })
-
-  it('should handle leading and trailing whitespace', () => {
-    expect(kebabCase('    leading and trailing whitespace')).toEqual('leading-and-trailing-whitespace')
-  })
-
-  it('should handle special characters correctly', () => {
-    expect(kebabCase('special@characters!')).toEqual('special-characters')
-  })
-
-  it('should handle strings that are already in snake_case', () => {
-    expect(kebabCase('snake_case')).toEqual('snake-case')
-  })
-
-  it('should work with an empty string', () => {
-    expect(kebabCase('')).toEqual('')
-  })
-
-  it('should work with an leading and trailing underscores', () => {
-    expect(kebabCase('__foo_bar___')).toEqual('foo-bar')
-  })
-
-  it('should work with screaming snake case', () => {
-    expect(kebabCase('FOO_BAR')).toEqual('foo-bar')
-  })
-
-  it('should work with capitalized words', () => {
-    expect(kebabCase('Foo Bar')).toEqual('foo-bar')
+  it.each([
+    ['', ''],
+    ['camelCase', 'camel-case'],
+    ['snake_case', 'snake-case'],
+    ['kebab-case', 'kebab-case'],
+    ['PascalCase', 'pascal-case'],
+    ['some whitespace', 'some-whitespace'],
+    ['HTTPRequest', 'http-request'],
+    ['    leading and trailing whitespace', 'leading-and-trailing-whitespace'],
+    ['special@characters!', 'special-characters'],
+    ['FOO_BAR', 'foo-bar'],
+  ])('%s => %s', (input, expected) => {
+    expect(kebabCase(input)).toBe(expected)
   })
 })

@@ -1,3 +1,5 @@
+import { upperFirst } from './upper-first'
+
 /**
  * Converts the first character of a string to uppercase and the remaining to lowercase.
  *
@@ -12,5 +14,5 @@
  * ```
  */
 export function capitalize<T extends string>(str: T): Capitalize<T> {
-  return (str.charAt(0).toUpperCase() + str.slice(1).toLowerCase()) as Capitalize<T>
+  return upperFirst(str.toLowerCase()) as Capitalize<T>
 }
