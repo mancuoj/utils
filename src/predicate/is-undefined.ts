@@ -1,10 +1,5 @@
 /**
- * Checks if the given value is undefined.
- *
- * This function tests whether the provided value is strictly equal to `undefined`.
- * It returns `true` if the value is `undefined`, and `false` otherwise.
- *
- * This function can also serve as a type predicate in TypeScript, narrowing the type of the argument to `undefined`.
+ * Checks if the given value is undefined, narrowing the type to `undefined`.
  *
  * @param x - The value to test if it is undefined.
  * @returns true if the value is undefined, false otherwise.

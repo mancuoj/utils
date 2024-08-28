@@ -1,7 +1,6 @@
 /**
- * Checks if the given value is not null nor undefined.
- *
- * The main use of this function is to be used with TypeScript as a type predicate.
+ * Checks if the given value is not null nor undefined, narrowing the type to
+ * the non-null and non-undefined value.
  *
  * @param x - The value to test if it is not null nor undefined.
  * @returns True if the value is not null nor undefined, false otherwise.
