@@ -1,5 +1,5 @@
 /**
- * Checks if the given value is a string.
+ * Checks if the given value is a string, narrowing the type to `string`.
  *
  * @param x - The value to test if it is a string.
  * @returns `true` if the value is a string, `false` otherwise.
