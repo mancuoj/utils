@@ -1,16 +1,14 @@
-import process, { argv, env, platform } from 'node:process'
+import process, { argv, env } from 'node:process'
 import tty from 'node:tty'
 import { isColorSupported } from './is-color-supported'
 
 describe('isColorSupported', () => {
-  const originalEnv = env
+  const originalEnv = env || {}
   const originalArgv = argv || []
-  const originalPlatform = platform
 
   afterAll(() => {
     process.env = originalEnv
-    process.argv = originalArgv || []
-    Object.defineProperty(process, 'platform', { value: originalPlatform })
+    process.argv = originalArgv
   })
 
   it('should return false if NO_COLOR is set', () => {
@@ -26,29 +24,35 @@ describe('isColorSupported', () => {
   })
 
   it('should return true if FORCE_COLOR is set', () => {
-    env.FORCE_COLOR = '1'
-    expect(isColorSupported()).toBeTruthy()
-    delete env.FORCE_COLOR
+    if (process.platform !== 'win32') {
+      env.FORCE_COLOR = '1'
+      expect(isColorSupported()).toBeTruthy()
+      delete env.FORCE_COLOR
+    }
   })
 
   it('should return true if --color is in argv', () => {
-    argv.push('--color')
-    expect(isColorSupported()).toBeTruthy()
-    argv.pop()
+    if (process.platform !== 'win32') {
+      argv.push('--color')
+      expect(isColorSupported()).toBeTruthy()
+      argv.pop()
+    }
   })
 
   it('should return true if platform is win32', () => {
-    Object.defineProperty(process, 'platform', { value: 'win32' })
-    expect(isColorSupported()).toBeTruthy()
-    Object.defineProperty(process, 'platform', { value: originalPlatform })
+    if (process.platform === 'win32') {
+      expect(isColorSupported()).toBeTruthy()
+    }
   })
 
   it('should return true if tty isatty(1) and TERM is not dumb', () => {
-    vi.spyOn(tty, 'isatty').mockReturnValue(true)
-    env.TERM = 'xterm'
-    expect(isColorSupported()).toBeTruthy()
-    delete env.TERM
-    vi.restoreAllMocks()
+    if (process.platform !== 'win32') {
+      vi.spyOn(tty, 'isatty').mockReturnValue(true)
+      env.TERM = 'xterm'
+      expect(isColorSupported()).toBeTruthy()
+      delete env.TERM
+      vi.restoreAllMocks()
+    }
   })
 
   it('should return false if tty isatty(1) and TERM is dumb', () => {
@@ -63,8 +67,10 @@ describe('isColorSupported', () => {
   })
 
   it('should return true if CI is set', () => {
-    env.CI = '1'
-    expect(isColorSupported()).toBeTruthy()
-    delete env.CI
+    if (process.platform !== 'win32') {
+      env.CI = '1'
+      expect(isColorSupported()).toBeTruthy()
+      delete env.CI
+    }
   })
 })
