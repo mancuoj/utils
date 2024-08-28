@@ -2,7 +2,7 @@
  * Checks if the given value is undefined, narrowing the type to `undefined`.
  *
  * @param x - The value to test if it is undefined.
- * @returns true if the value is undefined, false otherwise.
+ * @returns `true` if the value is undefined, `false` otherwise.
  *
  * @example
  * ```ts

@@ -2,7 +2,7 @@
  * Checks if the given value is null, narrowing the type to `null`.
  *
  * @param x - The value to test if it is null.
- * @returns True if the value is null, false otherwise.
+ * @returns `true` if the value is null, `false` otherwise.
  *
  * @example
  * ```ts

@@ -3,7 +3,7 @@
  * `null`, `undefined`, `string`, `number`, `boolean`, `symbol`, or `bigint`.
  *
  * @param value The value to check.
- * @returns Returns true if `value` is a primitive, false otherwise.
+ * @returns `true` if `value` is a primitive, `false` otherwise.
  *
  * @example
  * ```ts

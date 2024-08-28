@@ -3,7 +3,7 @@
  * the non-null and non-undefined value.
  *
  * @param x - The value to test if it is not null nor undefined.
- * @returns True if the value is not null nor undefined, false otherwise.
+ * @returns `true` if the value is not null nor undefined, `false` otherwise.
  *
  * @example
  * ```ts
