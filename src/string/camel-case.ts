@@ -21,7 +21,7 @@ import { getWords } from './get-words'
 export function camelCase(str: string): string {
   const words = getWords(str)
   if (words.length === 0) {
-    return str
+    return ''
   }
 
   const [first, ...rest] = words
