@@ -1,10 +1,6 @@
 /**
  * Returns a new array with all elements except for the first.
  *
- * This function takes an array and returns a new array containing all the elements
- * except for the first one. If the input array is empty or has only one element,
- * an empty array is returned.
- *
  * @param arr - The array to get the tail of.
  * @returns A new array containing all elements of the input array except for the first one.
  *
