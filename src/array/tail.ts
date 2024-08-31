@@ -15,9 +15,9 @@
  * console.log(tail(arr3));  //=> []
  * ```
  */
-export function tail<T>(arr: readonly [T]): []
 export function tail(arr: readonly []): []
-export function tail<T, U>(arr: readonly [T, ...U[]]): U[]
+export function tail<T>(arr: readonly [T]): []
+export function tail<T>(arr: readonly [T, ...T[]]): T[]
 export function tail<T>(arr: readonly T[]): T[]
 export function tail<T>(arr: readonly T[]): T[] {
   if (arr.length <= 1) {
