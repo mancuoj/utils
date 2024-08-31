@@ -18,7 +18,8 @@ export function isPathCwd(path: string): boolean {
   const resolvedPath = resolve(path)
 
   // File paths are case-insensitive on Windows
-  if (process.platform === 'win32')
+  if (process.platform === 'win32') {
     return resolvedPath.toLowerCase() === cwd.toLowerCase()
+  }
   return resolvedPath === cwd
 }
