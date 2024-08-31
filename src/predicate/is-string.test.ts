@@ -2,20 +2,20 @@ import { isString } from './is-string'
 
 describe('isString', () => {
   it('should return true for strings', () => {
-    expect(isString('hello')).toBeTruthy()
-    expect(isString('')).toBeTruthy()
-    expect(isString(String('hello'))).toBeTruthy()
+    expect(isString('hello')).toBe(true)
+    expect(isString('')).toBe(true)
+    expect(isString(String('hello'))).toBe(true)
   })
 
   it('should return false for non-strings', () => {
-    expect(isString(null)).toBeFalsy()
-    expect(isString(undefined)).toBeFalsy()
-    expect(isString(123)).toBeFalsy()
-    expect(isString({})).toBeFalsy()
-    expect(isString([])).toBeFalsy()
-    expect(isString(() => {})).toBeFalsy()
-    expect(isString(new Date())).toBeFalsy()
-    expect(isString(new Error('test error'))).toBeFalsy()
+    expect(isString(null)).toBe(false)
+    expect(isString(undefined)).toBe(false)
+    expect(isString(123)).toBe(false)
+    expect(isString({})).toBe(false)
+    expect(isString([])).toBe(false)
+    expect(isString(() => {})).toBe(false)
+    expect(isString(new Date())).toBe(false)
+    expect(isString(new Error('test error'))).toBe(false)
   })
 
   it('should be used with TypeScript as a type predicate', () => {

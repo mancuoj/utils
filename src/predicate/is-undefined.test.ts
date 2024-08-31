@@ -2,19 +2,19 @@ import { isUndefined } from './is-undefined'
 
 describe('isUndefined', () => {
   it('returns true if the value is undefined', () => {
-    expect(isUndefined(undefined)).toBeTruthy()
+    expect(isUndefined(undefined)).toBe(true)
   })
 
   it('returns false if the value is not undefined', () => {
-    expect(isUndefined(null)).toBeFalsy()
-    expect(isUndefined('')).toBeFalsy()
-    expect(isUndefined(123)).toBeFalsy()
-    expect(isUndefined({})).toBeFalsy()
-    expect(isUndefined([])).toBeFalsy()
-    expect(isUndefined(() => {})).toBeFalsy()
-    expect(isUndefined(/abc/)).toBeFalsy()
-    expect(isUndefined(new Date())).toBeFalsy()
-    expect(isUndefined(new Error('test error'))).toBeFalsy()
+    expect(isUndefined(null)).toBe(false)
+    expect(isUndefined('')).toBe(false)
+    expect(isUndefined(123)).toBe(false)
+    expect(isUndefined({})).toBe(false)
+    expect(isUndefined([])).toBe(false)
+    expect(isUndefined(() => {})).toBe(false)
+    expect(isUndefined(/abc/)).toBe(false)
+    expect(isUndefined(new Date())).toBe(false)
+    expect(isUndefined(new Error('test error'))).toBe(false)
   })
 
   it('can be used with TypeScript as a type predicate', () => {

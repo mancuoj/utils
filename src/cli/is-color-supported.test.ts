@@ -13,20 +13,20 @@ describe('isColorSupported', () => {
 
   it('should return false if NO_COLOR is set', () => {
     env.NO_COLOR = '1'
-    expect(isColorSupported()).toBeFalsy()
+    expect(isColorSupported()).toBe(false)
     delete env.NO_COLOR
   })
 
   it('should return false if --no-color is in argv', () => {
     argv.push('--no-color')
-    expect(isColorSupported()).toBeFalsy()
+    expect(isColorSupported()).toBe(false)
     argv.pop()
   })
 
   it('should return true if FORCE_COLOR is set', () => {
     if (process.platform !== 'win32') {
       env.FORCE_COLOR = '1'
-      expect(isColorSupported()).toBeTruthy()
+      expect(isColorSupported()).toBe(true)
       delete env.FORCE_COLOR
     }
   })
@@ -34,14 +34,14 @@ describe('isColorSupported', () => {
   it('should return true if --color is in argv', () => {
     if (process.platform !== 'win32') {
       argv.push('--color')
-      expect(isColorSupported()).toBeTruthy()
+      expect(isColorSupported()).toBe(true)
       argv.pop()
     }
   })
 
   it('should return true if platform is win32', () => {
     if (process.platform === 'win32') {
-      expect(isColorSupported()).toBeTruthy()
+      expect(isColorSupported()).toBe(true)
     }
   })
 
@@ -49,7 +49,7 @@ describe('isColorSupported', () => {
     if (process.platform !== 'win32') {
       vi.spyOn(tty, 'isatty').mockReturnValue(true)
       env.TERM = 'xterm'
-      expect(isColorSupported()).toBeTruthy()
+      expect(isColorSupported()).toBe(true)
       delete env.TERM
       vi.restoreAllMocks()
     }
@@ -60,7 +60,7 @@ describe('isColorSupported', () => {
       Object.keys(env).forEach(key => delete env[key])
       vi.spyOn(tty, 'isatty').mockReturnValue(true)
       env.TERM = 'dumb'
-      expect(isColorSupported()).toBeFalsy()
+      expect(isColorSupported()).toBe(false)
       delete env.TERM
       vi.restoreAllMocks()
     }
@@ -69,7 +69,7 @@ describe('isColorSupported', () => {
   it('should return true if CI is set', () => {
     if (process.platform !== 'win32') {
       env.CI = '1'
-      expect(isColorSupported()).toBeTruthy()
+      expect(isColorSupported()).toBe(true)
       delete env.CI
     }
   })

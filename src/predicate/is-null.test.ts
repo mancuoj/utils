@@ -2,19 +2,19 @@ import { isNull } from './is-null'
 
 describe('isNull', () => {
   it('should return true if the value is null', () => {
-    expect(isNull(null)).toBeTruthy()
+    expect(isNull(null)).toBe(true)
   })
 
   it('should return false if the value is not null', () => {
-    expect(isNull(undefined)).toBeFalsy()
-    expect(isNull('')).toBeFalsy()
-    expect(isNull(123)).toBeFalsy()
-    expect(isNull({})).toBeFalsy()
-    expect(isNull([])).toBeFalsy()
-    expect(isNull(() => {})).toBeFalsy()
-    expect(isNull(/abc/)).toBeFalsy()
-    expect(isNull(new Date())).toBeFalsy()
-    expect(isNull(new Error('test error'))).toBeFalsy()
+    expect(isNull(undefined)).toBe(false)
+    expect(isNull('')).toBe(false)
+    expect(isNull(123)).toBe(false)
+    expect(isNull({})).toBe(false)
+    expect(isNull([])).toBe(false)
+    expect(isNull(() => {})).toBe(false)
+    expect(isNull(/abc/)).toBe(false)
+    expect(isNull(new Date())).toBe(false)
+    expect(isNull(new Error('test error'))).toBe(false)
   })
 
   it('should be used with TypeScript as a type predicate', () => {

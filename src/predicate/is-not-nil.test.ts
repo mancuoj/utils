@@ -2,19 +2,19 @@ import { isNotNil } from './is-not-nil'
 
 describe('isNotNil', () => {
   it('should return false if the value is null or undefined', () => {
-    expect(isNotNil(null)).toBeFalsy()
-    expect(isNotNil(undefined)).toBeFalsy()
+    expect(isNotNil(null)).toBe(false)
+    expect(isNotNil(undefined)).toBe(false)
   })
 
   it('should return true if the value is not null nor undefined', () => {
-    expect(isNotNil('')).toBeTruthy()
-    expect(isNotNil(123)).toBeTruthy()
-    expect(isNotNil({})).toBeTruthy()
-    expect(isNotNil([])).toBeTruthy()
-    expect(isNotNil(() => {})).toBeTruthy()
-    expect(isNotNil(/abc/)).toBeTruthy()
-    expect(isNotNil(new Date())).toBeTruthy()
-    expect(isNotNil(new Error('test error'))).toBeTruthy()
+    expect(isNotNil('')).toBe(true)
+    expect(isNotNil(123)).toBe(true)
+    expect(isNotNil({})).toBe(true)
+    expect(isNotNil([])).toBe(true)
+    expect(isNotNil(() => {})).toBe(true)
+    expect(isNotNil(/abc/)).toBe(true)
+    expect(isNotNil(new Date())).toBe(true)
+    expect(isNotNil(new Error('test error'))).toBe(true)
   })
 
   it('should be used with TypeScript as a type predicate', () => {

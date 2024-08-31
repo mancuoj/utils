@@ -6,7 +6,7 @@ describe('randomInt', () => {
       const result = randomInt(5)
       expect(result).toBeGreaterThanOrEqual(0)
       expect(result).toBeLessThan(5)
-      expect(Number.isInteger(result)).toBeTruthy()
+      expect(Number.isInteger(result)).toBe(true)
     }
   })
 
@@ -15,7 +15,7 @@ describe('randomInt', () => {
       const result = randomInt(-5, 5)
       expect(result).toBeGreaterThanOrEqual(-5)
       expect(result).toBeLessThan(5)
-      expect(Number.isInteger(result)).toBeTruthy()
+      expect(Number.isInteger(result)).toBe(true)
     }
   })
 
