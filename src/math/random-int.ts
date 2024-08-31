@@ -1,8 +1,5 @@
 import { random } from './random'
 
-export function randomInt(maximum: number): number
-export function randomInt(minimum: number, maximum: number): number
-
 /**
  * Generates a random integer within a given range.
  *
@@ -19,6 +16,9 @@ export function randomInt(minimum: number, maximum: number): number
  * console.log(randomInt(5, 0));  // An error will be thrown.
  * ```
  */
+export function randomInt(maximum: number): number
+export function randomInt(minimum: number, maximum: number): number
+export function randomInt(minimum: number, maximum: number): number
 export function randomInt(minimum: number, maximum?: number): number {
   return Math.floor(random(minimum, maximum!))
 }
