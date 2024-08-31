@@ -16,9 +16,6 @@ import { random } from './random'
  * console.log(randomInt(5, 0));  // An error will be thrown.
  * ```
  */
-export function randomInt(maximum: number): number
-export function randomInt(minimum: number, maximum: number): number
-export function randomInt(minimum: number, maximum: number): number
 export function randomInt(minimum: number, maximum?: number): number {
   return Math.floor(random(minimum, maximum!))
 }

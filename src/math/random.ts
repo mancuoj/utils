@@ -14,9 +14,6 @@
  * console.log(random(5, 0));  // An error will be thrown.
  * ```
  */
-export function random(maximum: number): number
-export function random(minimum: number, maximum: number): number
-export function random(minimum: number, maximum?: number): number
 export function random(minimum: number, maximum?: number): number {
   if (maximum === undefined) {
     maximum = minimum
