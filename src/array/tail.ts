@@ -20,9 +20,5 @@ export function tail<T>(arr: readonly [T]): []
 export function tail<T>(arr: readonly [T, ...T[]]): T[]
 export function tail<T>(arr: readonly T[]): T[]
 export function tail<T>(arr: readonly T[]): T[] {
-  if (arr.length <= 1) {
-    return []
-  }
-
   return arr.slice(1)
 }
