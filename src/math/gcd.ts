@@ -1,5 +1,5 @@
 /**
- * Euclidean algorithm to calculate the Greatest Common Divisor (GCD)
+ * Calculate the Greatest Common Divisor (GCD) of two numbers using the Euclidean algorithm.
  *
  * @param a - First number
  * @param b - Second number
@@ -12,13 +12,14 @@
  * ```
  */
 export function gcd(a: number, b: number): number {
-  let tmp: number
   a = Math.abs(a)
   b = Math.abs(b)
+
   while (b !== 0) {
-    tmp = b
+    const temp = b
     b = a % b
-    a = tmp
+    a = temp
   }
+
   return a
 }
