@@ -1,8 +1,8 @@
 /**
- * Check if a path starts with `./` or `../`.
+ * Check if the input starts with `./` or `../`.
  *
- * @param path - The path to check.
- * @returns `true` if the path is relative, otherwise `false`.
+ * @param input - The input URL or pathname.
+ * @returns `true` if the input is relative, otherwise `false`.
  *
  * @example
  * ```ts
@@ -10,6 +10,6 @@
  * console.log(isRelative('/file.txt'));   //=> false
  * ```
  */
-export function isRelative(path: string): boolean {
-  return path.startsWith('./') || path.startsWith('../')
+export function isRelative(input: string): boolean {
+  return input.startsWith('./') || input.startsWith('../')
 }
