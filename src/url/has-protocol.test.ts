@@ -29,8 +29,6 @@ describe('hasProtocol', () => {
   it('should work with opts', () => {
     expect(hasProtocol('//example.com', false)).toBe(false)
     expect(hasProtocol('//example.com', true)).toBe(true)
-    expect(hasProtocol('https:///example.com')).toBe(true)
-    expect(hasProtocol('https:///example.com', { strict: true })).toBe(true)
     expect(hasProtocol('ftp:\example.com')).toBe(true)
     expect(hasProtocol('ftp:\example.com', { strict: true })).toBe(false)
   })

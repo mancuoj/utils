@@ -16,7 +16,7 @@ interface HasProtocolOptions {
 /**
  * Check if the input has a protocol.
  *
- * Use `{ acceptRelative: true }` to accept relative URLs,
+ * `{ acceptRelative: true }` to accept relative URLs,
  * `{ strict: true }` to use strict protocol checking.
  *
  * @param input - The input URL or pathname.
@@ -25,6 +25,12 @@ interface HasProtocolOptions {
  *
  * @example
  * ```ts
+ * console.log(hasProtocol('https://example.com'));                 //=> true
+ * console.log(hasProtocol('ftp://'));                              //=> true
+ * console.log(hasProtocol('//example.com'));                       //=> false
+ * console.log(hasProtocol('example.com'));                         //=> false
+ * console.log(hasProtocol('//example.com', true));                 //=> true
+ * console.log(hasProtocol('ftp:\example.com', { strict: true }));  //=> false
  * ```
  */
 export function hasProtocol(input: string, opts: boolean | HasProtocolOptions = {}): boolean {
