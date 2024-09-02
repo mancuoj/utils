@@ -14,7 +14,7 @@ const TRAILING_SLASH_RE = /\/$|\/\?|\/#/
  * hasTrailingSlash('/file.txt/#fragment', true);  //=> true
  * ```
  */
-export function hasTrailingSlash(input: string, respectQueryAndFragment?: boolean): boolean {
+export function hasTrailingSlash(input: string, respectQueryAndFragment = false): boolean {
   if (!respectQueryAndFragment) {
     return input.endsWith('/')
   }
