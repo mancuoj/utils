@@ -1,6 +1,6 @@
-const PROTOCOL_STRICT_REGEX = /^[\s\w\0+.-]{2,}:[/\\]{1,2}/
-const PROTOCOL_REGEX = /^[\s\w\0+.-]{2,}:(?:[/\\]{2})?/
-const PROTOCOL_RELATIVE_REGEX = /^(?:[/\\]\s*){2,}[^/\\]/
+const PROTOCOL_STRICT_RE = /^[\s\w\0+.-]{2,}:[/\\]{1,2}/
+const PROTOCOL_RE = /^[\s\w\0+.-]{2,}:(?:[/\\]{2})?/
+const PROTOCOL_RELATIVE_RE = /^(?:[/\\]\s*){2,}[^/\\]/
 
 /**
  * Options for the `hasProtocol` function.
@@ -39,11 +39,11 @@ export function hasProtocol(input: string, opts: boolean | HasProtocolOptions = 
   }
 
   if (opts.strict) {
-    return PROTOCOL_STRICT_REGEX.test(input)
+    return PROTOCOL_STRICT_RE.test(input)
   }
 
   return (
-    PROTOCOL_REGEX.test(input)
-    || (opts.acceptRelative ? PROTOCOL_RELATIVE_REGEX.test(input) : false)
+    PROTOCOL_RE.test(input)
+    || (opts.acceptRelative ? PROTOCOL_RELATIVE_RE.test(input) : false)
   )
 }

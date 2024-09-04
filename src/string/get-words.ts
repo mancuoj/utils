@@ -1,4 +1,4 @@
-const CASE_SPLIT_PATTERN = /[A-Z]?[a-z]+|\d+|[A-Z]+(?![a-z])/g
+const CASE_SPLIT_RE = /[A-Z]?[a-z]+|\d+|[A-Z]+(?![a-z])/g
 
 /**
  * Extracts words from a given string based on various casing conventions like camelCase, PascalCase, snake_case, etc.
@@ -21,5 +21,5 @@ const CASE_SPLIT_PATTERN = /[A-Z]?[a-z]+|\d+|[A-Z]+(?![a-z])/g
  * ```
  */
 export function getWords(str: string): string[] {
-  return Array.from(str.match(CASE_SPLIT_PATTERN) ?? [])
+  return Array.from(str.match(CASE_SPLIT_RE) ?? [])
 }

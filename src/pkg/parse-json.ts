@@ -19,9 +19,9 @@ const specialValues: Record<string, any> = {
   '-infinity': Number.NEGATIVE_INFINITY,
 }
 
-const suspectProtoRx = /"(?:_|\\u0{2}5[Ff]){2}(?:p|\\u0{2}70)(?:r|\\u0{2}72)(?:o|\\u0{2}6[Ff])(?:t|\\u0{2}74)(?:o|\\u0{2}6[Ff])(?:_|\\u0{2}5[Ff]){2}"\s*:/
-const suspectConstructorRx = /"(?:c|\\u0063)(?:o|\\u006[Ff])(?:n|\\u006[Ee])(?:s|\\u0073)(?:t|\\u0074)(?:r|\\u0072)(?:u|\\u0075)(?:c|\\u0063)(?:t|\\u0074)(?:o|\\u006[Ff])(?:r|\\u0072)"\s*:/
-const jsonSigRx = /^\s*["[{]|^\s*-?\d{1,16}(?:.\d{1,17})?(?:E[+-]?\d+)?\s*$/i
+const SUSPECT_PROTO_RE = /"(?:_|\\u0{2}5[Ff]){2}(?:p|\\u0{2}70)(?:r|\\u0{2}72)(?:o|\\u0{2}6[Ff])(?:t|\\u0{2}74)(?:o|\\u0{2}6[Ff])(?:_|\\u0{2}5[Ff]){2}"\s*:/
+const SUSPECT_CONSTRUCTOR_RE = /"(?:c|\\u0063)(?:o|\\u006[Ff])(?:n|\\u006[Ee])(?:s|\\u0{2}73)(?:t|\\u0{2}74)(?:r|\\u0{2}72)(?:u|\\u0{2}75)(?:c|\\u0{2}63)(?:t|\\u0{2}74)(?:o|\\u0{2}6[Ff])(?:r|\\u0{2}72)"\s*:/
+const JSON_SIG_RE = /^\s*["[{]|^\s*-?\d{1,16}(?:.\d{1,17})?(?:E[+-]?\d+)?\s*$/i
 
 interface Options {
   strict?: boolean
@@ -72,7 +72,7 @@ export function parseJSON<T = unknown>(value: any, options: Options = {}): T {
     }
   }
 
-  if (!jsonSigRx.test(value)) {
+  if (!JSON_SIG_RE.test(value)) {
     if (options.strict) {
       throw new SyntaxError('[parseJSON] Invalid JSON')
     }
@@ -80,7 +80,7 @@ export function parseJSON<T = unknown>(value: any, options: Options = {}): T {
   }
 
   try {
-    if (suspectProtoRx.test(value) || suspectConstructorRx.test(value)) {
+    if (SUSPECT_PROTO_RE.test(value) || SUSPECT_CONSTRUCTOR_RE.test(value)) {
       if (options.strict) {
         throw new Error('[parseJSON] Possible prototype pollution')
       }

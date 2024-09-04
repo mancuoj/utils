@@ -1,5 +1,3 @@
-const _DRIVE_LETTER_START_RE = /^[A-Z]:\//i
-
 /**
  * Normalizes a Windows path to POSIX format.
  *
@@ -24,5 +22,5 @@ export function normalizeWindowsPath(input: string): string {
 
   return input
     .replace(/\\/g, '/')
-    .replace(_DRIVE_LETTER_START_RE, r => r.toUpperCase())
+    .replace(/^[A-Z]:\//i, r => r.toUpperCase())
 }
