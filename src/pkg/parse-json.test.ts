@@ -1,7 +1,7 @@
 import { describe, expect, it, vi } from 'vitest'
-import { safeJsonParse } from './safe-json-parse'
+import { parseJSON } from './parse-json'
 
-describe('safeJsonParse', () => {
+describe('parseJSON', () => {
   it('should return the passed value if it\'s not a string', () => {
     const testCases = [
       { input: {} },
@@ -16,25 +16,25 @@ describe('safeJsonParse', () => {
     ]
 
     for (const testCase of testCases) {
-      expect(safeJsonParse(testCase.input)).toStrictEqual(testCase.input)
+      expect(parseJSON(testCase.input)).toStrictEqual(testCase.input)
     }
   })
 
   it('case-insensitive', () => {
-    expect(safeJsonParse('true')).toStrictEqual(true)
-    expect(safeJsonParse('TRUE')).toStrictEqual(true)
-    expect(safeJsonParse('false')).toStrictEqual(false)
-    expect(safeJsonParse('FALSE')).toStrictEqual(false)
-    expect(safeJsonParse('null')).toBeNull()
-    expect(safeJsonParse('NULL')).toBeNull()
-    expect(safeJsonParse('nan')).toBeNaN()
-    expect(safeJsonParse('NaN')).toBeNaN()
-    expect(safeJsonParse('infinity')).toStrictEqual(Number.POSITIVE_INFINITY)
-    expect(safeJsonParse('Infinity')).toStrictEqual(Number.POSITIVE_INFINITY)
-    expect(safeJsonParse('-infinity')).toStrictEqual(Number.NEGATIVE_INFINITY)
-    expect(safeJsonParse('-Infinity')).toStrictEqual(Number.NEGATIVE_INFINITY)
-    expect(safeJsonParse('undefined')).toBeUndefined()
-    expect(safeJsonParse('UNDEFINED')).toBeUndefined()
+    expect(parseJSON('true')).toStrictEqual(true)
+    expect(parseJSON('TRUE')).toStrictEqual(true)
+    expect(parseJSON('false')).toStrictEqual(false)
+    expect(parseJSON('FALSE')).toStrictEqual(false)
+    expect(parseJSON('null')).toBeNull()
+    expect(parseJSON('NULL')).toBeNull()
+    expect(parseJSON('nan')).toBeNaN()
+    expect(parseJSON('NaN')).toBeNaN()
+    expect(parseJSON('infinity')).toStrictEqual(Number.POSITIVE_INFINITY)
+    expect(parseJSON('Infinity')).toStrictEqual(Number.POSITIVE_INFINITY)
+    expect(parseJSON('-infinity')).toStrictEqual(Number.NEGATIVE_INFINITY)
+    expect(parseJSON('-Infinity')).toStrictEqual(Number.NEGATIVE_INFINITY)
+    expect(parseJSON('undefined')).toBeUndefined()
+    expect(parseJSON('UNDEFINED')).toBeUndefined()
   })
 
   it('parses number', () => {
@@ -51,18 +51,18 @@ describe('safeJsonParse', () => {
     ]
 
     for (const testCase of testCases) {
-      expect(safeJsonParse(testCase.input)).toStrictEqual(testCase.output)
+      expect(parseJSON(testCase.input)).toStrictEqual(testCase.output)
     }
   })
 
   it('surrounding spaces', () => {
-    expect(safeJsonParse('  true ')).toBe(true)
-    expect(safeJsonParse(' -123 ')).toStrictEqual(-123)
-    expect(safeJsonParse(' { "test": 123 }  ')).toStrictEqual({ test: 123 })
+    expect(parseJSON('  true ')).toBe(true)
+    expect(parseJSON(' -123 ')).toStrictEqual(-123)
+    expect(parseJSON(' { "test": 123 }  ')).toStrictEqual({ test: 123 })
   })
 
   it('parses string with escape characters', () => {
-    expect(safeJsonParse('"a\\nb"')).toBe('a\nb')
+    expect(parseJSON('"a\\nb"')).toBe('a\nb')
   })
 
   it('parses valid JSON texts', () => {
@@ -76,7 +76,7 @@ describe('safeJsonParse', () => {
     ]
 
     for (const testCase of testCases) {
-      expect(safeJsonParse(testCase.input)).toStrictEqual(testCase.output)
+      expect(parseJSON(testCase.input)).toStrictEqual(testCase.output)
     }
   })
 
@@ -90,7 +90,7 @@ describe('safeJsonParse', () => {
     ]
 
     for (const testCase of testCases) {
-      expect(safeJsonParse(testCase.input)).toStrictEqual(testCase.input)
+      expect(parseJSON(testCase.input)).toStrictEqual(testCase.input)
     }
   })
 
@@ -102,7 +102,7 @@ describe('safeJsonParse', () => {
     ]
 
     for (const testCase of testCases) {
-      expect(safeJsonParse(testCase.input)).toStrictEqual(testCase.output)
+      expect(parseJSON(testCase.input)).toStrictEqual(testCase.output)
     }
   })
 
@@ -112,7 +112,7 @@ describe('safeJsonParse', () => {
       // eslint-disable-next-line no-console
       .mockImplementation(console.log)
 
-    const warnMessage = (key: string) => `[safeJsonParse] Dropping "${key}" key to prevent prototype pollution.`
+    const warnMessage = (key: string) => `[parseJSON] Dropping "${key}" key to prevent prototype pollution.`
 
     const testCases = [
       {
@@ -133,7 +133,7 @@ describe('safeJsonParse', () => {
     ]
 
     for (const testCase of testCases) {
-      expect(safeJsonParse(testCase.input)).toStrictEqual(testCase.output)
+      expect(parseJSON(testCase.input)).toStrictEqual(testCase.output)
       expect(spy).toHaveBeenCalledWith(testCase.warning)
     }
   })
@@ -150,7 +150,7 @@ describe('safeJsonParse', () => {
 
     for (const testCase of testCases) {
       it(testCase.input, () => {
-        expect(() => safeJsonParse(testCase.input, { strict: true })).toThrowError(
+        expect(() => parseJSON(testCase.input, { strict: true })).toThrowError(
           testCase.output || '',
         )
       })
@@ -174,8 +174,8 @@ describe('safeJsonParse', () => {
     ]
 
     for (const testCase of testCases) {
-      expect(() => safeJsonParse(testCase.input, { strict: true })).toThrowError(
-        '[safeJsonParse] Possible prototype pollution',
+      expect(() => parseJSON(testCase.input, { strict: true })).toThrowError(
+        '[parseJSON] Possible prototype pollution',
       )
     }
   })

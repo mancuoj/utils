@@ -1,3 +1,14 @@
+function avoidProtoPollution(key: string, value: any): any {
+  if (
+    key === '__proto__'
+    || (key === 'constructor' && value && typeof value === 'object' && 'prototype' in value)
+  ) {
+    console.warn(`[parseJSON] Dropping "${key}" key to prevent prototype pollution.`)
+    return undefined
+  }
+  return value
+}
+
 const specialValues: Record<string, any> = {
   'true': true,
   'false': false,
@@ -7,20 +18,10 @@ const specialValues: Record<string, any> = {
   'infinity': Number.POSITIVE_INFINITY,
   '-infinity': Number.NEGATIVE_INFINITY,
 }
+
 const suspectProtoRx = /"(?:_|\\u0{2}5[Ff]){2}(?:p|\\u0{2}70)(?:r|\\u0{2}72)(?:o|\\u0{2}6[Ff])(?:t|\\u0{2}74)(?:o|\\u0{2}6[Ff])(?:_|\\u0{2}5[Ff]){2}"\s*:/
 const suspectConstructorRx = /"(?:c|\\u0063)(?:o|\\u006[Ff])(?:n|\\u006[Ee])(?:s|\\u0073)(?:t|\\u0074)(?:r|\\u0072)(?:u|\\u0075)(?:c|\\u0063)(?:t|\\u0074)(?:o|\\u006[Ff])(?:r|\\u0072)"\s*:/
-const JsonSigRx = /^\s*["[{]|^\s*-?\d{1,16}(?:.\d{1,17})?(?:E[+-]?\d+)?\s*$/i
-
-function jsonParseTransform(key: string, value: any): any {
-  if (
-    key === '__proto__'
-    || (key === 'constructor' && value && typeof value === 'object' && 'prototype' in value)
-  ) {
-    console.warn(`[safeJsonParse] Dropping "${key}" key to prevent prototype pollution.`)
-    return undefined
-  }
-  return value
-}
+const jsonSigRx = /^\s*["[{]|^\s*-?\d{1,16}(?:.\d{1,17})?(?:E[+-]?\d+)?\s*$/i
 
 interface Options {
   strict?: boolean
@@ -42,15 +43,15 @@ interface Options {
  *
  * @example
  * ```ts
- * console.log(safeJsonParse('{"a": 1}'));                                         //=> { a: 1 }
- * console.log(safeJsonParse('TRUE'));                                             //=> true
- * console.log(safeJsonParse('abc'));                                              //=> 'abc'
- * console.log(safeJsonParse('{ "user": { "__proto__": { "isAdmin": true } } }');  //=> { user: {} }
- * console.log(safeJsonParse('[foo');                                              //=> '[foo'
- * console.log(safeJsonParse('[foo', { strict: true }));                           //=> Throws an error
+ * console.log(parseJSON('{"a": 1}'));                                         //=> { a: 1 }
+ * console.log(parseJSON('TRUE'));                                             //=> true
+ * console.log(parseJSON('abc'));                                              //=> 'abc'
+ * console.log(parseJSON('{ "user": { "__proto__": { "isAdmin": true } } }');  //=> { user: {} }
+ * console.log(parseJSON('[foo');                                              //=> '[foo'
+ * console.log(parseJSON('[foo', { strict: true }));                           // will throw an error
  * ```
  */
-export function safeJsonParse<T = unknown>(value: any, options: Options = {}): T {
+export function parseJSON<T = unknown>(value: any, options: Options = {}): T {
   if (typeof value !== 'string') {
     return value
   }
@@ -71,9 +72,9 @@ export function safeJsonParse<T = unknown>(value: any, options: Options = {}): T
     }
   }
 
-  if (!JsonSigRx.test(value)) {
+  if (!jsonSigRx.test(value)) {
     if (options.strict) {
-      throw new SyntaxError('[safeJsonParse] Invalid JSON')
+      throw new SyntaxError('[parseJSON] Invalid JSON')
     }
     return value as T
   }
@@ -81,9 +82,9 @@ export function safeJsonParse<T = unknown>(value: any, options: Options = {}): T
   try {
     if (suspectProtoRx.test(value) || suspectConstructorRx.test(value)) {
       if (options.strict) {
-        throw new Error('[safeJsonParse] Possible prototype pollution')
+        throw new Error('[parseJSON] Possible prototype pollution')
       }
-      return JSON.parse(value, jsonParseTransform)
+      return JSON.parse(value, avoidProtoPollution)
     }
     return JSON.parse(value)
   }

@@ -1,1 +1,1 @@
-export { safeJsonParse } from './safe-json-parse'
+export { parseJSON } from './parse-json'
