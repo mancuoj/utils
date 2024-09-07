@@ -49,11 +49,11 @@ function parseRegularURL(input: string): ParsedURL {
  *
  * @example
  * ```ts
- * console.log(parseURL("http://foo.com/foo?test=123#token"));
- * //=> { protocol: 'http:', auth: '', host: 'foo.com', pathname: '/foo', search: '?test=123', hash: '#token' }
+ * parseURL("http://foo.com/foo?test=123#token");
+ * // { protocol: 'http:', auth: '', host: 'foo.com', pathname: '/foo', search: '?test=123', hash: '#token' }
  *
- * console.log(parseURL("foo.com/foo?test=123#token"));
- * //=> { pathname: 'foo.com/foo', search: '?test=123', hash: '#token' }
+ * parseURL("foo.com/foo?test=123#token");
+ * // { pathname: 'foo.com/foo', search: '?test=123', hash: '#token' }
  *
  * parseURL("foo.com/foo?test=123#token", "https://");
  * // { protocol: 'https:', auth: '', host: 'foo.com', pathname: '/foo', search: '?test=123', hash: '#token' }
