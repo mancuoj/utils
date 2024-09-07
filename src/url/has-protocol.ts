@@ -1,5 +1,5 @@
-const PROTOCOL_STRICT_RE = /^[\s\w\0+.-]{2,}:[/\\]{1,2}/
 const PROTOCOL_RE = /^[\s\w\0+.-]{2,}:(?:[/\\]{2})?/
+const PROTOCOL_STRICT_RE = /^[\s\w\0+.-]{2,}:[/\\]{1,2}/
 const PROTOCOL_RELATIVE_RE = /^(?:[/\\]\s*){2,}[^/\\]/
 
 /**
@@ -25,10 +25,10 @@ interface HasProtocolOptions {
  *
  * @example
  * ```ts
+ * console.log(hasProtocol('example.com'));                         //=> false
  * console.log(hasProtocol('https://example.com'));                 //=> true
  * console.log(hasProtocol('ftp://'));                              //=> true
  * console.log(hasProtocol('//example.com'));                       //=> false
- * console.log(hasProtocol('example.com'));                         //=> false
  * console.log(hasProtocol('//example.com', true));                 //=> true
  * console.log(hasProtocol('ftp:\example.com', { strict: true }));  //=> false
  * ```

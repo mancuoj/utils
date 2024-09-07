@@ -1,4 +1,4 @@
-const protocolRelative = Symbol.for('protocolRelative')
+export const protocolRelative = Symbol.for('protocolRelative')
 
 export interface ParsedURL {
   protocol?: string
