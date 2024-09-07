@@ -42,4 +42,10 @@ describe('removeWhitespace', () => {
     const expected = 'ThisIsATestString'
     expect(removeWhitespace(input)).toBe(expected)
   })
+
+  it('should handle strings with null bytes', () => {
+    const input = 'This\0is\0a\0test\0string'
+    const expected = 'Thisisateststring'
+    expect(removeWhitespace(input)).toBe(expected)
+  })
 })
