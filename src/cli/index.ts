@@ -1,3 +1,4 @@
+export { clear } from './clear'
 export { beep, CSI, cursor, ESC } from './cursor'
 export { erase } from './erase'
 export { isColorSupported } from './is-color-supported'
