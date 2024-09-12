@@ -13,6 +13,7 @@ Opinionated collection of common JavaScript / TypeScript utils.
 - Fully typed - with TSDoc
 - Ships ESM and CJS bundles
 - Battle-tested with 100% test coverage
+- Zero dependencies
 - ❤️
 
 ## License
