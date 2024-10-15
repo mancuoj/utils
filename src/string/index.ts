@@ -1,6 +1,6 @@
 export { camelCase } from './camel-case'
 export { capitalize } from './capitalize'
-export { clsx } from './clsx'
+export { type ClassValue, clsx } from './clsx'
 export { flatCase } from './flat-case'
 export { getWords } from './get-words'
 export { kebabCase } from './kebab-case'
