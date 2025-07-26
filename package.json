@@ -1,69 +1,46 @@
 {
   "name": "@mancuoj/utils",
-  "type": "module",
   "version": "0.0.17",
-  "packageManager": "pnpm@9.12.1",
-  "description": "Opinionated collection of common JavaScript / TypeScript utils",
+  "type": "module",
+  "description": "Common frontend utils of @mancuoj",
   "author": "Mancuoj <mancuoj@gmail.com>",
   "license": "MIT",
   "repository": "mancuoj/utils",
   "keywords": [
+    "mancuoj",
     "utils",
     "typescript"
   ],
-  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "import": {
         "types": "./dist/index.d.ts",
         "default": "./dist/index.js"
-      },
-      "require": {
-        "types": "./dist/index.d.cts",
-        "default": "./dist/index.cjs"
       }
-    },
-    "./package.json": "./package.json"
-  },
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "typesVersions": {
-    "*": {
-      "*": [
-        "./dist/*",
-        "./dist/index.d.ts"
-      ]
     }
   },
-  "files": [
-    "dist"
-  ],
   "scripts": {
-    "build": "bunchee",
-    "dev": "bunchee -w",
-    "lint": "eslint .",
-    "test": "vitest run --coverage --typecheck",
-    "prepublishOnly": "pnpm build",
-    "release": "bumpp && pnpm publish --access public",
-    "prepare": "simple-git-hooks"
+    "build": "bunup",
+    "dev": "bunup --watch",
+    "tsc": "tsc --noEmit",
+    "format": "prettier -w .",
+    "test": "bun test",
+    "test:watch": "bun test --watch",
+    "test:coverage": "bun test --coverage",
+    "release": "bumpp && bun publish --access public"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^3.7.3",
-    "@types/node": "^22.7.5",
-    "@vitest/coverage-istanbul": "^2.1.3",
-    "bumpp": "^9.7.1",
-    "bunchee": "^5.5.1",
-    "eslint": "^9.12.0",
-    "lint-staged": "^15.2.10",
-    "simple-git-hooks": "^2.11.1",
-    "typescript": "^5.6.3",
-    "vitest": "^2.1.3"
+    "@types/bun": "latest",
+    "bumpp": "^10.2.0",
+    "bunup": "^0.8.71",
+    "typescript": "^5.8.3",
+    "@mancuoj/prettier-config": "latest",
+    "prettier": "latest"
   },
-  "simple-git-hooks": {
-    "pre-commit": "pnpm lint-staged"
-  },
-  "lint-staged": {
-    "*": "eslint --fix"
-  }
+  "prettier": "@mancuoj/prettier-config"
 }

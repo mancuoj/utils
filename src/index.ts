@@ -1,11 +1,3 @@
-export * from './array'
-export * from './cli'
-export * from './color'
-export * from './ds'
-export * from './file'
-export * from './math'
-export * from './object'
-export * from './pkg'
-export * from './predicate'
-export * from './string'
-export * from './url'
+export function greet(name: string): string {
+  return `Hello, ${name}!`
+}
