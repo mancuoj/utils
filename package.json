@@ -1,16 +1,8 @@
 {
   "name": "@mancuoj/utils",
+  "description": "Common JavaScript/TypeScript utilities",
   "version": "0.0.17",
   "type": "module",
-  "description": "Common frontend utils of @mancuoj",
-  "author": "Mancuoj <mancuoj@gmail.com>",
-  "license": "MIT",
-  "repository": "mancuoj/utils",
-  "keywords": [
-    "mancuoj",
-    "utils",
-    "typescript"
-  ],
   "files": [
     "dist"
   ],
@@ -24,6 +16,14 @@
       }
     }
   },
+  "author": "Mancuoj <mancuoj@gmail.com>",
+  "license": "MIT",
+  "repository": "mancuoj/utils",
+  "keywords": [
+    "mancuoj",
+    "utils",
+    "typescript"
+  ],
   "scripts": {
     "build": "bunup",
     "dev": "bunup --watch",
