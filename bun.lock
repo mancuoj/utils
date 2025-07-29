@@ -4,11 +4,11 @@
     "": {
       "name": "bun-ts-starter",
       "devDependencies": {
-        "@mancuoj/prettier-config": "latest",
-        "@types/bun": "latest",
+        "@mancuoj/prettier-config": "^0.5.0",
+        "@types/bun": "^1.2.19",
         "bumpp": "^10.2.0",
         "bunup": "^0.8.71",
-        "prettier": "latest",
+        "prettier": "^3.6.2",
         "typescript": "^5.8.3",
       },
     },
