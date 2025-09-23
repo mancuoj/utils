@@ -35,11 +35,11 @@
     "release": "bumpp && bun publish --access public"
   },
   "devDependencies": {
-    "@types/bun": "^1.2.19",
-    "bumpp": "^10.2.0",
-    "bunup": "^0.8.71",
-    "typescript": "^5.8.3",
-    "@mancuoj/prettier-config": "^0.5.0",
+    "@types/bun": "^1.2.22",
+    "bumpp": "^10.2.3",
+    "bunup": "^0.11.26",
+    "typescript": "^5.9.2",
+    "@mancuoj/prettier-config": "^0.5.3",
     "prettier": "^3.6.2"
   },
   "prettier": "@mancuoj/prettier-config"
