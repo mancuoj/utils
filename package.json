@@ -36,9 +36,9 @@
   },
   "devDependencies": {
     "@types/bun": "^1.2.23",
-    "bumpp": "^10.2.3",
-    "bunup": "^0.14.9",
-    "typescript": "^5.9.2",
+    "bumpp": "^10.3.1",
+    "bunup": "^0.14.18",
+    "typescript": "^5.9.3",
     "@mancuoj/prettier-config": "^0.5.3",
     "prettier": "^3.6.2"
   },
